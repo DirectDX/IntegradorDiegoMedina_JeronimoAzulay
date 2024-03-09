@@ -47,7 +47,7 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
                 e.printStackTrace();
             }
         }
-        LOGGER.info("Este es el id: " + domicilio.getId());
+        LOGGER.info("Este es el id del domicilio: " + domicilio.getId());
         return domicilio;
     }
 

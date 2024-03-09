@@ -57,8 +57,8 @@ public class BD {
             statement.execute(SQL_DROP_CREATE_ODONTOLOGOS);
             LOGGER.info("se creo la tabla odontologos");
             statement.execute(SQL_INSERT_ODONTOLOGOS);
-            statement.execute(SQL_INSERT_PACIENTES);
             statement.execute(SQL_INSERT_DOMICILIOS);
+            statement.execute(SQL_INSERT_PACIENTES);
             LOGGER.info("se insertó un valor en la tabla  odontologos");
 
         } catch (Exception e) {

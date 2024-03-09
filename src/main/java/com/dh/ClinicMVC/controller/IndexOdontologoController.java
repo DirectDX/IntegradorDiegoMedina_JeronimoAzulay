@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/odontologo")
-public class OdontologoController {
+public class IndexOdontologoController {
 
     private IOdontologoService odontologoService;
 
-    public OdontologoController(OdontologoService odontologoService) {
+    public IndexOdontologoController(OdontologoService odontologoService) {
         this.odontologoService = odontologoService;
     }
 

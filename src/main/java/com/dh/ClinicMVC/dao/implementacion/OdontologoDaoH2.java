@@ -45,6 +45,7 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
                 e.printStackTrace();
             }
         }
+        LOGGER.info("Este es el id del odontologo: " + odontologo.getId());
         return odontologo;
     }
 

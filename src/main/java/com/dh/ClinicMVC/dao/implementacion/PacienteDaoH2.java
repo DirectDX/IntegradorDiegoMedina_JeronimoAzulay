@@ -28,15 +28,15 @@ public class PacienteDaoH2 implements IDao<Paciente> {
         DomicilioService domicilioService = new DomicilioService();
 
         try {
+            domicilioService.guardar(paciente.getDomicilio());
+
+
             connection = BD.getConnection();
-
-
             PreparedStatement psInsert = connection.prepareStatement(INSERT_PACIENTES, Statement.RETURN_GENERATED_KEYS);
             psInsert.setString(1, paciente.getNombre());
             psInsert.setString(2, paciente.getApellido());
             psInsert.setString(3, paciente.getDni());
             psInsert.setDate(4, Date.valueOf(paciente.getFechaIngreso())); //parseado, asi funciona
-            domicilioService.guardar(paciente.getDomicilio());
             psInsert.setInt(5, paciente.getDomicilio().getId());
 
 
@@ -56,6 +56,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
                 e.printStackTrace();
             }
         }
+        LOGGER.info("Este es el id del paciente: " + paciente.getId());
         return paciente;
     }
 
@@ -65,6 +66,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
         Paciente paciente = null;
         Domicilio domicilio = new Domicilio();
         DomicilioService domicilioService = new DomicilioService();
+
         try {
             conexion = BD.getConnection();
             PreparedStatement psSearchByID =  conexion.prepareStatement(SELECT_BY_ID);
@@ -155,16 +157,16 @@ public class PacienteDaoH2 implements IDao<Paciente> {
             ResultSet rs = listarSql.executeQuery();
 
             while (rs.next()) {
-                Domicilio domicilio = new Domicilio();
                 Paciente paciente = new Paciente();
                 paciente.setId(rs.getInt(1));
                 paciente.setNombre(rs.getString(2));
                 paciente.setApellido(rs.getString(3));
                 paciente.setDni(rs.getString(4));
                 paciente.setFechaIngreso(rs.getDate(5).toLocalDate());
-                domicilio = domicilioService.buscarPorId(rs.getInt(6));
-                paciente.setDomicilio(domicilio);
 
+                Domicilio domicilio = domicilioService.buscarPorId(rs.getInt(6));
+                paciente.setDomicilio(domicilio);
+                pacientes.add(paciente);
             }
 
 
@@ -177,7 +179,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
                 e.printStackTrace();
             }
         }
-        LOGGER.info("Lista de odontologos: " + pacientes);
+        LOGGER.info("Lista de pacientes: " + pacientes);
         return pacientes;
     }
 }
