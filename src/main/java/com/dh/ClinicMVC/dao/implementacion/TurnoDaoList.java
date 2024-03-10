@@ -51,6 +51,6 @@ public class TurnoDaoList implements IDao<Turno> {
 
     @Override
     public List<Turno> listarTodos() {
-        return null;
+        return turnoLista;
     }
 }
