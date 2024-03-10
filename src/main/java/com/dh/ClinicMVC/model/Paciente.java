@@ -8,7 +8,10 @@ public class Paciente {
     private String apellido;
     private String dni;
     private LocalDate fechaIngreso;
-    private Domicilio domicilio;
+    private Domicilio domicilio; // paciente(id, nombre,etc,domicilio) => paciente va a BD PACIENTES, paciente.domicilio => BD de DOMICILIOS
+
+
+    // AHORA TRAEMOS DESDE LA BASE DE DATOS A JAVA
 
     public Paciente(String nombre, String apellido, String dni, LocalDate fechaAlta, Domicilio domicilio) {
         this.nombre = nombre;

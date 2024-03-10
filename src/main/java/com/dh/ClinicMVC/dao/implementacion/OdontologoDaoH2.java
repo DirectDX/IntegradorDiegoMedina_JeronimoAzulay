@@ -3,6 +3,7 @@ package com.dh.ClinicMVC.dao.implementacion;
 import com.dh.ClinicMVC.dao.BD;
 import com.dh.ClinicMVC.dao.IDao;
 import com.dh.ClinicMVC.model.Odontologo;
+import com.dh.ClinicMVC.service.implementation.DomicilioService;
 import org.apache.log4j.Logger;
 
 import java.sql.*;
@@ -16,6 +17,9 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
     private static final String INSERT_ODONTOLOGOS = "INSERT INTO ODONTOLOGOS (NOMBRE, APELLIDO, MATRICULA) VALUES (?,?,?)";
     private static final String SELECT_ALL = "SELECT * FROM ODONTOLOGOS";
     private static final String SELECT_BY_ID = "SELECT * FROM ODONTOLOGOS WHERE ID = ?";
+    private static final String DELETE_BY_ID = "DELETE FROM ODONTOLOGOS WHERE ID = ?";
+    private static final String UPDATE_BY_ID = "UPDATE ODONTOLOGOS SET NOMBRE = ?, APELLIDO= ?, MATRICULA= ? WHERE ID = ?";
+
     @Override
     public Odontologo guardar(Odontologo odontologo) {
         LOGGER.info("Estamos guardando un odontologo");
@@ -81,12 +85,44 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
 
     @Override
     public void eliminar(Integer id) {
-
+        Connection connection = null;
+        try {
+            connection = BD.getConnection();
+            PreparedStatement psDelete = connection.prepareStatement(DELETE_BY_ID);
+            psDelete.setInt(1,id);
+            psDelete.execute();
+            LOGGER.info("Se elimino correctamente el odontologo con id: "+ id);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
     public void actualizar(Odontologo odontologo) {
-
+        Connection connection = null;
+        try {
+            connection = BD.getConnection();
+            PreparedStatement update = connection.prepareStatement(UPDATE_BY_ID);
+            update.setString(1, odontologo.getNombre());
+            update.setString(2, odontologo.getApellido());
+            update.setString(3, odontologo.getMatricula());
+            update.setInt(4, odontologo.getId());
+            update.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+    }
     }
 
     @Override

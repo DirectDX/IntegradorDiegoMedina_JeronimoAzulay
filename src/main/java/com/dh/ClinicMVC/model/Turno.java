@@ -1,23 +1,32 @@
 package com.dh.ClinicMVC.model;
 
-import java.sql.Time;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class Turno {
+    private static Integer contador = 1;
     private Integer id;
-    private Date fecha;
-    private Time hora;
+    private LocalDate fecha;
     private Paciente paciente;
     private Odontologo odontologo;
 
     public Turno() {
     }
 
-    public Turno(Date fecha, Time hora, Paciente paciente, Odontologo odontologo) {
+    public Turno(LocalDate fecha, Paciente paciente, Odontologo odontologo) {
+        this.id = contador;
         this.fecha = fecha;
-        this.hora = hora;
         this.paciente = paciente;
         this.odontologo = odontologo;
+        contador ++;
+    }
+
+    public static Integer getContador() {
+        return contador;
+    }
+
+    public static void setContador(Integer contador) {
+        Turno.contador = contador;
     }
 
     public Integer getId() {
@@ -28,20 +37,12 @@ public class Turno {
         this.id = id;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
-    }
-
-    public Time getHora() {
-        return hora;
-    }
-
-    public void setHora(Time hora) {
-        this.hora = hora;
     }
 
     public Paciente getPaciente() {

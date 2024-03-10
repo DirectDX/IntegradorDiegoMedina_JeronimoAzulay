@@ -99,12 +99,15 @@ public class PacienteDaoH2 implements IDao<Paciente> {
     @Override
     public void eliminar(Integer id) {
         Connection connection = null;
+        DomicilioService domicilioService = new DomicilioService();
         try {
             connection = BD.getConnection();
+            Paciente paciente = buscarPorId(id);
             PreparedStatement psDelete = connection.prepareStatement(DELETE_BY_ID);
             psDelete.setInt(1,id);
             psDelete.execute();
             LOGGER.info("Se elimino correctamente el paciente con id: "+ id);
+            domicilioService.eliminar(paciente.getDomicilio().getId());
         }catch (Exception e){
             e.printStackTrace();
         }finally {
@@ -129,7 +132,7 @@ public class PacienteDaoH2 implements IDao<Paciente> {
             update.setString(2, paciente.getApellido());
             update.setString(3, paciente.getDni());
             update.setDate(4, Date.valueOf(paciente.getFechaIngreso())); //parseado, asi funciona
-            domicilioService.guardar(paciente.getDomicilio());
+            domicilioService.actualizar(paciente.getDomicilio());
             update.setInt(5, paciente.getDomicilio().getId());
             update.executeUpdate();
         } catch (Exception e) {

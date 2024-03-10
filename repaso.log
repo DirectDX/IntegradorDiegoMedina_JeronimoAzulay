@@ -106,3 +106,13 @@
 [2024-03-08 21:15:03] [ INFO ] [DomicilioDaoH2:182] Lista de pacientes: [com.dh.ClinicMVC.model.Paciente@4d851379]
 [2024-03-08 21:18:00] [ INFO ] [BD:58] se creo la tabla odontologos
 [2024-03-08 21:18:00] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-10 19:36:59] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-10 19:36:59] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-10 19:37:00] [ INFO ] [DomicilioDaoH2:26] Estamos guardando un PACIENTE
+[2024-03-10 19:37:00] [ INFO ] [DomicilioDaoH2:22] Estamos guardando un domicilio
+[2024-03-10 19:37:00] [ INFO ] [DomicilioDaoH2:50] Este es el id del domicilio: 2
+[2024-03-10 19:37:00] [ INFO ] [DomicilioDaoH2:59] Este es el id del paciente: 2
+[2024-03-10 19:37:00] [ INFO ] [DomicilioDaoH2:26] Estamos guardando un PACIENTE
+[2024-03-10 19:37:00] [ INFO ] [DomicilioDaoH2:22] Estamos guardando un domicilio
+[2024-03-10 19:37:00] [ INFO ] [DomicilioDaoH2:50] Este es el id del domicilio: 3
+[2024-03-10 19:37:00] [ INFO ] [DomicilioDaoH2:59] Este es el id del paciente: 3

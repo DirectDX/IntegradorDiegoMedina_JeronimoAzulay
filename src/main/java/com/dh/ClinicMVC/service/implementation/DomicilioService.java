@@ -18,6 +18,15 @@ public class DomicilioService implements IDomicilioService {
     public Domicilio guardar(Domicilio domicilio) {
         return iDao.guardar(domicilio);
     }
+    @Override
+    public void eliminar(Integer id) {
+        iDao.eliminar(id);
+    }
+
+    @Override
+    public void actualizar(Domicilio domicilio) {
+        iDao.actualizar(domicilio);
+    }
 
     @Override
     public List<Domicilio> listarTodos() {

@@ -16,6 +16,9 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
     private static final String INSERT_DOMICILIO = "INSERT INTO DOMICILIOS (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES (?,?,?,?)";
     private static final String SELECT_ALL = "SELECT * FROM DOMICILIOS";
     private static final String SELECT_BY_ID = "SELECT * FROM DOMICILIOS WHERE ID = ?";
+    private static final String DELETE_BY_ID = "DELETE FROM DOMICILIOS WHERE ID = ?";
+    private static final String UPDATE_BY_ID = "UPDATE DOMICILIOS SET CALLE = ?, NUMERO= ?, LOCALIDAD= ?, PROVINCIA = ? WHERE ID = ?";
+
 
     @Override
     public Domicilio guardar(Domicilio domicilio) {
@@ -84,13 +87,48 @@ public class DomicilioDaoH2 implements IDao<Domicilio> {
 
     @Override
     public void eliminar(Integer id) {
+        Connection connection = null;
+        try {
+            connection = BD.getConnection();
+            PreparedStatement psDelete = connection.prepareStatement(DELETE_BY_ID);
+            psDelete.setInt(1,id);
+            psDelete.execute();
+            LOGGER.info("Se elimino correctamente el domicilio con id: "+ id);
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            try {
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
 
 
     }
 
     @Override
     public void actualizar(Domicilio domicilio) {
-
+        Connection connection = null;
+        try {
+            connection = BD.getConnection();
+            PreparedStatement update = connection.prepareStatement(UPDATE_BY_ID);
+            update.setString(1, domicilio.getCalle());
+            update.setInt(2, domicilio.getNumero());
+            update.setString(3, domicilio.getLocalidad());
+            update.setString(4, domicilio.getProvincia());
+            update.setInt(5, domicilio.getId());
+            update.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
