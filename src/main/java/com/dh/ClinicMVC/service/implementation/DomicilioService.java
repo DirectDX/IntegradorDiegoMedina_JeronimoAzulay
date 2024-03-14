@@ -4,9 +4,10 @@ import com.dh.ClinicMVC.dao.IDao;
 import com.dh.ClinicMVC.dao.implementacion.DomicilioDaoH2;
 import com.dh.ClinicMVC.model.Domicilio;
 import com.dh.ClinicMVC.service.IDomicilioService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class DomicilioService implements IDomicilioService {
     private IDao<Domicilio> iDao;
 

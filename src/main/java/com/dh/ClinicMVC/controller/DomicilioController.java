@@ -1,11 +1,9 @@
 package com.dh.ClinicMVC.controller;
 
 import com.dh.ClinicMVC.model.Domicilio;
-import com.dh.ClinicMVC.model.Odontologo;
 import com.dh.ClinicMVC.service.IDomicilioService;
-
 import com.dh.ClinicMVC.service.implementation.DomicilioService;
-import com.dh.ClinicMVC.service.implementation.OdontologoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

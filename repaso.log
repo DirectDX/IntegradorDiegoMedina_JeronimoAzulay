@@ -127,3 +127,30 @@
 [2024-03-10 19:43:37] [ INFO ] [DomicilioDaoH2:50] Este es el id del domicilio: 3
 [2024-03-10 19:43:37] [ INFO ] [DomicilioDaoH2:59] Este es el id del paciente: 3
 [2024-03-10 19:43:49] [ INFO ] [DomicilioDaoH2:182] Lista de pacientes: [com.dh.ClinicMVC.model.Paciente@11aac6cf, com.dh.ClinicMVC.model.Paciente@144a1823, com.dh.ClinicMVC.model.Paciente@2a0236b1]
+[2024-03-12 20:56:42] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-12 20:56:42] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-12 20:57:10] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-12 20:57:10] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-12 21:03:13] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-12 21:03:13] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-12 22:24:40] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-12 22:24:40] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-12 22:28:26] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-12 22:28:26] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-12 22:28:32] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-12 22:28:32] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-12 22:37:00] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-12 22:37:00] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-12 22:37:18] [ INFO ] [OdontologoDaoH2:130] Estamos consultando todos los Odontologos.
+[2024-03-12 22:38:47] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-12 22:38:47] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-12 22:39:26] [ INFO ] [OdontologoDaoH2:130] Estamos consultando todos los Odontologos.
+[2024-03-12 22:43:57] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-12 22:43:57] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-12 22:47:49] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-12 22:47:49] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-12 22:49:23] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-12 22:49:23] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-12 22:52:00] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-12 22:52:00] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-12 22:52:16] [ INFO ] [OdontologoDaoH2:130] Estamos consultando todos los Odontologos.
