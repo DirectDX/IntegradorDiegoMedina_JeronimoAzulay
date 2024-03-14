@@ -154,3 +154,24 @@
 [2024-03-12 22:52:00] [ INFO ] [BD:58] se creo la tabla odontologos
 [2024-03-12 22:52:00] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
 [2024-03-12 22:52:16] [ INFO ] [OdontologoDaoH2:130] Estamos consultando todos los Odontologos.
+[2024-03-13 21:18:37] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-13 21:18:37] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-13 21:19:19] [ INFO ] [OdontologoDaoH2:130] Estamos consultando todos los Odontologos.
+[2024-03-13 21:22:14] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-13 21:22:14] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-13 21:22:42] [ INFO ] [OdontologoDaoH2:25] Estamos guardando un odontologo
+[2024-03-13 21:22:42] [ INFO ] [OdontologoDaoH2:52] Este es el id del odontologo: 2
+[2024-03-13 21:22:50] [ INFO ] [OdontologoDaoH2:130] Estamos consultando todos los Odontologos.
+[2024-03-13 21:33:58] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-13 21:33:58] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-13 21:41:59] [ INFO ] [OdontologoDaoH2:130] Estamos consultando todos los Odontologos.
+[2024-03-13 22:27:07] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-13 22:27:07] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-13 22:27:53] [ INFO ] [OdontologoDaoH2:130] Estamos consultando todos los Odontologos.
+[2024-03-13 22:28:13] [ INFO ] [OdontologoDaoH2:130] Estamos consultando todos los Odontologos.
+[2024-03-13 22:43:58] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-13 22:43:58] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-13 22:50:54] [ INFO ] [BD:58] se creo la tabla odontologos
+[2024-03-13 22:50:54] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-13 22:51:25] [ INFO ] [OdontologoDaoH2:130] Estamos consultando todos los Odontologos.
+[2024-03-13 22:59:42] [ INFO ] [OdontologoDaoH2:130] Estamos consultando todos los Odontologos.
