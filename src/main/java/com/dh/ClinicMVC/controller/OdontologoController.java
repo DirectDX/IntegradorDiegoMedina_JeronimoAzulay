@@ -46,7 +46,7 @@ public class OdontologoController {
             response = ResponseEntity.ok("Se elimino el odontologo con id " + id);
         }
         else {
-            response = ResponseEntity.ok().body("No se encontro el odontologo");
+            response = ResponseEntity.notFound().build();
         }
         return response;
     }
@@ -58,7 +58,7 @@ public class OdontologoController {
             odontologoService.actualizar(odontologo);
             response = ResponseEntity.ok("Se actualizó el odontologo con id " + odontologo.getId());
         } else {
-            response = ResponseEntity.ok().body("No se puede actualizar el odontologo");
+            response = ResponseEntity.notFound().build();
         }
         return response;
 
