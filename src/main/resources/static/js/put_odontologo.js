@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const selectDentists = document.getElementById("select_dentists");
 
     // Fetching data from the dentist API para hacer la lista
-    const url = '/odontologos';
-    const settings = {
+    const urlGet = '/odontologos';
+    const settingsGet = {
         method: 'GET'
     };
-
-    fetch(url, settings)
+    
+    fetch(urlGet, settingsGet)
         .then(response => response.json())
         .then(data => {
             // Itera sobre los datos de los odontólogos y agrega opciones al select
@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
     selectDentists.addEventListener('change', function () {
         const selectedOption = this.options[this.selectedIndex];
         // Asignar los valores de la opción seleccionada como placeholders en el formulario
-        document.getElementById('id').placeholder = selectedOption.getAttribute('data-id');
-        document.getElementById('nombre').placeholder = selectedOption.getAttribute('data-nombre');
-        document.getElementById('apellido').placeholder = selectedOption.getAttribute('data-apellido');
-        document.getElementById('matricula').placeholder = selectedOption.getAttribute('data-matricula');
+        document.getElementById('id').value = selectedOption.getAttribute('data-id');
+        document.getElementById('nombre').value = selectedOption.getAttribute('data-nombre');
+        document.getElementById('apellido').value = selectedOption.getAttribute('data-apellido');
+        document.getElementById('matricula').value = selectedOption.getAttribute('data-matricula');
     });
 
     //Ante un submit del formulario se ejecutará la siguiente funcion
@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         //invocamos utilizando la función fetch la API odontólogos con el método PUT que actualizará
         //el odontólogo que enviaremos en formato JSON
-        const url = '/odontologos';
-        const settings = {
+        const urlPut = '/odontologos';
+        const settingsPut = {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
             body: JSON.stringify(formData)
         };
 
-        fetch(url, settings)
+        fetch(urlPut, settingsPut)
             .then(response => response.json())
             .then(data => {
                 //Si no hay ningún error se muestra un mensaje diciendo que el odontólogo se actualizó correctamente
@@ -80,6 +80,25 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelector('#response').innerHTML = errorAlert;
                 document.querySelector('#response').style.display = "block";
             });
+        
+            fetch(url, settings)
+                .then(response => response.json())
+                .then(data => {
+                    // Itera sobre los datos de los odontólogos y agrega opciones al select
+                    data.forEach(dentist => {
+                        const option = document.createElement("option");
+                        option.value = dentist.id; // Asigna el ID del odontólogo al valor de la opción
+                        option.textContent = `${dentist.nombre} ${dentist.apellido}`; // Texto a mostrar en la opción
+                        // Asigna los atributos data-* de la opción para su posterior uso
+                        option.dataset.id = dentist.id;
+                        option.dataset.nombre = dentist.nombre;
+                        option.dataset.apellido = dentist.apellido;
+                        option.dataset.matricula = dentist.matricula;
+                        selectDentists.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error al obtener la lista de odontólogos:', error));
+        
     });
 
     function resetUploadForm() {

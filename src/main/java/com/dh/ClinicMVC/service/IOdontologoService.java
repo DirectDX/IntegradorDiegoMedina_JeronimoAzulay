@@ -1,8 +1,9 @@
 package com.dh.ClinicMVC.service;
 
-import com.dh.ClinicMVC.model.Domicilio;
-import com.dh.ClinicMVC.model.Odontologo;
-import com.dh.ClinicMVC.service.implementation.OdontologoService;
+
+import com.dh.ClinicMVC.entity.Odontologo;
+import com.dh.ClinicMVC.entity.Paciente;
+
 
 import java.util.List;
 
@@ -11,8 +12,8 @@ public interface IOdontologoService {
 
     List<Odontologo> listarTodos();
 
-    Odontologo buscarPorId(Integer id);
+    Odontologo buscarPorId(Long id);
     void actualizar(Odontologo odontologo);
-    void eliminar(Integer id);
+    void eliminar(Long id);
 
 }

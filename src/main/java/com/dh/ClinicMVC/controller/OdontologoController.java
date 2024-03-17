@@ -1,6 +1,6 @@
 package com.dh.ClinicMVC.controller;
 
-import com.dh.ClinicMVC.model.Odontologo;
+import com.dh.ClinicMVC.entity.Odontologo;
 import com.dh.ClinicMVC.service.IOdontologoService;
 import com.dh.ClinicMVC.service.implementation.OdontologoService;
 import org.springframework.http.HttpStatus;
@@ -33,12 +33,12 @@ public class OdontologoController {
         }
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Odontologo> buscarPorId(@PathVariable Integer id) {
+    public ResponseEntity<Odontologo> buscarPorId(@PathVariable Long id) {
         Odontologo odontologo = odontologoService.buscarPorId(id);
        return odontologo != null ? ResponseEntity.ok(odontologo) : ResponseEntity.notFound().build();
     }
     @DeleteMapping
-    public ResponseEntity<String> eliminar(@RequestParam("id") Integer id) {
+    public ResponseEntity<String> eliminar(@RequestParam("id") Long id) {
         ResponseEntity<String> response;
         Odontologo odontologoBuscado = odontologoService.buscarPorId(id);
         if (odontologoBuscado != null) {

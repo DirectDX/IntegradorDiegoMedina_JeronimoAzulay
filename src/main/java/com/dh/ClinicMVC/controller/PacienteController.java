@@ -1,6 +1,6 @@
 package com.dh.ClinicMVC.controller;
 
-import com.dh.ClinicMVC.model.Paciente;
+import com.dh.ClinicMVC.entity.Paciente;
 import com.dh.ClinicMVC.service.IPacienteService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,13 +34,13 @@ public class PacienteController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Paciente> buscarPorId(@PathVariable Integer id) {
+    public ResponseEntity<Paciente> buscarPorId(@PathVariable Long id) {
         Paciente paciente = pacienteService.buscarPorId(id);
         return paciente != null ? ResponseEntity.ok(paciente) : ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> eliminar(@PathVariable Integer id) {
+    public ResponseEntity<String> eliminar(@PathVariable Long id) {
         ResponseEntity<String> response;
         Paciente pacienteBuscado = pacienteService.buscarPorId(id);
         if (pacienteBuscado != null) {
@@ -53,7 +53,7 @@ public class PacienteController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<String> actualizar(@PathVariable Integer id, @RequestBody Paciente paciente) {
+    public ResponseEntity<String> actualizar(@PathVariable Long id, @RequestBody Paciente paciente) {
         ResponseEntity<String> response;
         Paciente pacienteBuscado = pacienteService.buscarPorId(id);
         if (pacienteBuscado != null) {

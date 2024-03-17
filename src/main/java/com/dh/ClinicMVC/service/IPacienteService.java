@@ -1,6 +1,6 @@
 package com.dh.ClinicMVC.service;
 
-import com.dh.ClinicMVC.model.Paciente;
+import com.dh.ClinicMVC.entity.Paciente;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ public interface IPacienteService {
 
     List<Paciente> listarTodos();
 
-    Paciente buscarPorId(Integer id);
+    Paciente buscarPorId(Long id);
     void actualizar(Paciente paciente);
-    void eliminar(Integer id);
+    void eliminar(Long id);
 }
