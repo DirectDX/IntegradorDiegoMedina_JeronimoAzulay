@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style/index.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -12,7 +13,9 @@
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/index.html">Clínica Odontológica</a>
+    <a class="navbar-brand" href="/index.html">
+        <img src="./assets/logo.png" alt="logo diente">
+        <span id="title">Clínica Odontológica</span></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -36,6 +39,73 @@
 
     </div>
 </nav>
+<main>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5 class="card-title">Resumen</h5>
+                <img src="./assets/grafica.png" alt="Dentist Icon" class="card-icon">
+                <div class="card-content">
+                  <ul>
+                    <li>Total de Turnos</li>
+                    <li>Odontologos Registrados</li>
+                    <li>Pacientes Registrados</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5 class="card-title">Turnos</h5>
+                <img src="./assets/calendario.png" alt="Calendario Icon" class="card-icon">
+                <div class="card-content">
+                  <ul>
+                    <li>Nuevo Turno</li>
+                    <li>Listar Turnos</li>
+                    <li>Turnos por Odontologo</li>
+                    <li>Turnos por Paciente</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5 class="card-title">Odontologos</h5>
+                <img src="./assets/dentista.png" alt="Doctor Icon" class="card-icon">
+                <div class="card-content">
+                  <ul>
+                    <li><a href="odontologoLista.html">Gestionar Odontologos</a></li>
+                    <li><a href="odontologoAgregar.html">Alta de Odontologos</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5 class="card-title">Pacientes</h5>
+                <img src="./assets/paciente.png" alt="User Icon" class="card-icon">
+                <div class="card-content">
+                  <ul>
+                    <li><a href="pacienteLista.html">Gestionar Pacientes</a></li>
+                    <li><a href="pacienteAgregar.html">Alta de Pacientes</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</main>
 
 </body>
 </html>
