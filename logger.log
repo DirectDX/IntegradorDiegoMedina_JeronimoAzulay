@@ -1,2 +1,19 @@
 [2024-03-15 16:32:29] [ INFO ] [BD:58] se creo la tabla odontologos
 [2024-03-15 16:32:29] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
+[2024-03-19 22:30:05] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@58ef95e4
+[2024-03-19 22:32:44] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@1c1560ed
+[2024-03-19 22:33:06] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@baac23c
+[2024-03-21 21:23:13] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@1d509d07
+[2024-03-21 21:24:11] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@2138afc4
+[2024-03-21 21:31:39] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@2b367524
+[2024-03-21 21:31:55] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@baac23c
+[2024-03-21 21:32:05] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@1a3df2e5
+[2024-03-21 21:32:06] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@4a44c9a7
+[2024-03-21 21:33:02] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@c41c562
+[2024-03-21 21:33:03] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@2383cbf
+[2024-03-21 21:33:04] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@57e4d4fb
+[2024-03-21 21:40:05] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@2c0fea59
+[2024-03-21 21:40:52] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@64cc9df6
+[2024-03-21 21:42:01] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@3a3cccc8
+[2024-03-21 21:42:46] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@12a703af
+[2024-03-21 21:42:55] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@33c34ac0

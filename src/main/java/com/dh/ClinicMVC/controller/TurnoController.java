@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/turnos")
@@ -34,21 +35,30 @@ public class TurnoController {
 
 
     //endpoint para guardar un turno
+//    @PostMapping
+//    public ResponseEntity<Turno> guardar(@RequestBody Turno turno) {
+//        ResponseEntity<Turno> response;
+//
+//        LOGGER.info("esto trae el turno: " + turno);
+////        vamos a chequear que exista el odontologo y la paciente
+//        if (odontologoService.buscarPorId(turno.getOdontologo().getId()) != null &&
+//                pacienteService.buscarPorId(turno.getPaciente().getId()) != null) {
+//            //setear una respuesta en 200 y vamos a hacer que devuelva el turno
+//            response = ResponseEntity.ok(turnoService.guardar(turno));
+//        } else {
+//            //si no existe el odontologo o el paciente
+//            response = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+//        }
+//        return response;
+//    }
     @PostMapping
-    public ResponseEntity<Turno> guardar(@RequestBody Turno turno) {
-        ResponseEntity<Turno> response;
-
-        LOGGER.info("esto trae el turno: " + turno);
-//        vamos a chequear que exista el odontologo y la paciente
-        if (odontologoService.buscarPorId(turno.getOdontologo().getId()) != null &&
-                pacienteService.buscarPorId(turno.getPaciente().getId()) != null) {
-            //setear una respuesta en 200 y vamos a hacer que devuelva el turno
-            response = ResponseEntity.ok(turnoService.guardar(turno));
-        } else {
-            //si no existe el odontologo o el paciente
-            response = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+    public ResponseEntity<Turno> guardarTurno(@RequestBody Turno turno) {
+        try {
+            Turno nuevoTurno = turnoService.guardar(turno);
+            return ResponseEntity.status(HttpStatus.CREATED).body(nuevoTurno);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
-        return response;
     }
     @GetMapping("/{id}")
     public ResponseEntity<Turno> buscarPorId(@PathVariable Long id) {
@@ -78,19 +88,19 @@ public class TurnoController {
         }
     }
     @GetMapping("/paciente/{id}")
-    public ResponseEntity<List<Turno>> buscarPorPacienteId(@PathVariable Long id) {
-        List<Turno> turnosEncontrados = turnoService.buscarPorPacienteId(id);
+    public ResponseEntity<List<Turno>> buscarPorPacienteId(@RequestParam Long id) {
+        Optional<List<Turno>> turnosEncontrados = turnoService.findByPacienteId(id);
         if (!turnosEncontrados.isEmpty()) {
-            return ResponseEntity.ok(turnosEncontrados);
+            return ResponseEntity.ok(turnosEncontrados.get());
         } else {
             return ResponseEntity.notFound().build();
         }
     }
     @GetMapping("/odontolgo/{id}")
-    public ResponseEntity<List<Turno>> buscarPorOdontologoId(@PathVariable Long id) {
-        List<Turno> turnosEncontrados = turnoService.buscarPorOdontologoId(id);
+    public ResponseEntity<List<Turno>> buscarPorOdontologoId(@RequestParam Long id) {
+        Optional<List<Turno>> turnosEncontrados = turnoService.findByOdontologoId(id);
         if (!turnosEncontrados.isEmpty()) {
-            return ResponseEntity.ok(turnosEncontrados);
+            return ResponseEntity.ok(turnosEncontrados.get());
         } else {
             return ResponseEntity.notFound().build();
         }

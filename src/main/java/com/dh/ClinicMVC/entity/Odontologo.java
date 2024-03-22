@@ -18,12 +18,19 @@ import java.util.Set;
 public class Odontologo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
     private String nombre;
     private String apellido;
+    @Column(unique = true)
     private String matricula;
 
     @OneToMany(mappedBy = "odontologo")
     private Set<Turno> turnoSet = new HashSet<>();
 
+    public Odontologo(String nombre, String apellido, String matricula) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.matricula = matricula;
+    }
 }

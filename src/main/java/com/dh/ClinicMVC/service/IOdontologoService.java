@@ -6,14 +6,18 @@ import com.dh.ClinicMVC.entity.Paciente;
 
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IOdontologoService {
-    Odontologo guardar (Odontologo odontologo);
+    Odontologo guardar (Odontologo odontologo) throws Exception;
 
     List<Odontologo> listarTodos();
 
     Odontologo buscarPorId(Long id);
     void actualizar(Odontologo odontologo);
     void eliminar(Long id);
+    Optional<List<Odontologo>> findByNombre(String nombre);
+    Optional<List<Odontologo>> findByApellido(String apellido);
+    Optional<List<Odontologo>> findByMatricula(String matricula);
 
 }

@@ -1,5 +1,6 @@
 package com.dh.ClinicMVC.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -20,7 +21,11 @@ public class Turno {
     private Long id;
     private LocalDate fecha;
     @ManyToOne
+    @JoinColumn(name="paciente_id")
+    @JsonIgnoreProperties("turnoSet")
     private Paciente paciente;
     @ManyToOne
+    @JoinColumn(name="odontologo_id")
+    @JsonIgnoreProperties("turnoSet")
     private Odontologo odontologo;
 }

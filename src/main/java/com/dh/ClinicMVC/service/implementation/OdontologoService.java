@@ -20,10 +20,13 @@ public class OdontologoService implements IOdontologoService {
         this.odontologoRepository = odontologoRepository;
     }
     @Override
-    public Odontologo guardar(Odontologo odontologo) {
+    public Odontologo guardar(Odontologo odontologo) throws Exception {
+        if (odontologo.getNombre() == null || odontologo.getApellido() == null || odontologo.getMatricula()== null
+                || odontologo.getNombre().trim() == "" || odontologo.getApellido().trim() == "" || odontologo.getMatricula().trim() == "") {
+            throw new Exception("No puedes poner campos vacios");
+        }
         return odontologoRepository.save(odontologo);
     }
-
     @Override
     public List<Odontologo> listarTodos() {
         return odontologoRepository.findAll();
@@ -47,5 +50,20 @@ public class OdontologoService implements IOdontologoService {
     @Override
     public void eliminar(Long id) {
         odontologoRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<List<Odontologo>> findByNombre(String nombre) {
+       return odontologoRepository.findByNombre(nombre);
+    }
+
+    @Override
+    public Optional<List<Odontologo>> findByApellido(String apellido) {
+        return odontologoRepository.findByApellido(apellido);
+    }
+
+    @Override
+    public Optional<List<Odontologo>> findByMatricula(String matricula) {
+        return odontologoRepository.findByMatricula(matricula);
     }
 }

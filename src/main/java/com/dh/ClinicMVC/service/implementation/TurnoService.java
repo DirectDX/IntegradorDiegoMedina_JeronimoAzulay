@@ -53,27 +53,14 @@ public class TurnoService implements ITurnoService {
     public void actualizar(Turno turno) {
     turnoRepository.save(turno);
     }
+
     @Override
-    public List<Turno> buscarPorPacienteId(Long pacienteId) {
-        List<Turno> turnosEncontrados = new ArrayList<>();
-        List<Turno> listaTurnos = turnoRepository.findAll();
-        for (Turno turno:listaTurnos) {
-        if (turno.getPaciente().getId() == pacienteId) {
-             turnosEncontrados.add(turno);
-            }
-        }
-        return turnosEncontrados;
+    public Optional<List<Turno>> findByOdontologoId(Long id) {
+        return turnoRepository.findByOdontologoId(id);
     }
 
     @Override
-    public List<Turno> buscarPorOdontologoId(Long odontologoId) {
-        List<Turno> turnosEncontrados = new ArrayList<>();
-        List<Turno> listaTurnos = turnoRepository.findAll();
-        for (Turno turno:listaTurnos) {
-            if (turno.getOdontologo().getId() == odontologoId) {
-                turnosEncontrados.add(turno);
-            }
-        }
-        return turnosEncontrados;
+    public Optional<List<Turno>> findByPacienteId(Long id) {
+        return findByPacienteId(id);
     }
 }

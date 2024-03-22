@@ -5,6 +5,7 @@ import com.dh.ClinicMVC.entity.Paciente;
 import com.dh.ClinicMVC.entity.Turno;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ITurnoService {
     Turno guardar(Turno turno);
@@ -15,6 +16,6 @@ public interface ITurnoService {
     void eliminar(Long id);
 
     void actualizar(Turno turno);
-    List<Turno> buscarPorPacienteId(Long pacienteId);
-    List<Turno> buscarPorOdontologoId(Long odontologoId);
+    Optional<List<Turno>> findByOdontologoId(Long id);
+    Optional<List<Turno>> findByPacienteId(Long id);
 }

@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/odontologos")
@@ -20,10 +21,16 @@ public class OdontologoController {
     }
     @PostMapping
     public ResponseEntity<Odontologo> guardar(@RequestBody Odontologo odontologo) {
-        Odontologo nuevoOdontologo = odontologoService.guardar(odontologo);
+        // como manejar el error 500 para cuando ponemos 2 odontologos con la misma matricula
+        Odontologo nuevoOdontologo = null;
+        try {
+            nuevoOdontologo = odontologoService.guardar(odontologo);
+        } catch (Exception e) {
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        }
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoOdontologo);
     }
-    @GetMapping
+    @GetMapping("/list")
     public  ResponseEntity<List<Odontologo>> listarTodos() {
         List<Odontologo> listaBuscados = odontologoService.listarTodos();
         if (!listaBuscados.isEmpty()) {
@@ -33,7 +40,7 @@ public class OdontologoController {
         }
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Odontologo> buscarPorId(@PathVariable Long id) {
+    public ResponseEntity<Odontologo> buscarPorId(@RequestParam Long id) {
         Odontologo odontologo = odontologoService.buscarPorId(id);
        return odontologo != null ? ResponseEntity.ok(odontologo) : ResponseEntity.notFound().build();
     }
@@ -61,7 +68,37 @@ public class OdontologoController {
             response = ResponseEntity.notFound().build();
         }
         return response;
-
     }
+
+    @GetMapping("/matricula/{matricula}")
+    public  ResponseEntity<List<Odontologo>> buscarPorMatricula(@PathVariable("matricula") String matricula) {
+        Optional<List<Odontologo>> listaBuscados = odontologoService.findByMatricula(matricula);
+        if (!listaBuscados.isEmpty()) {
+            return ResponseEntity.ok(listaBuscados.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/apellido/{apellido}")
+    public  ResponseEntity<List<Odontologo>> buscarPorApellido(@PathVariable("apellido") String apellido) {
+        Optional<List<Odontologo>> listaBuscados = odontologoService.findByApellido(apellido);
+        if (!listaBuscados.isEmpty()) {
+            return ResponseEntity.ok(listaBuscados.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @GetMapping("/nombre/{nombre}")
+    public  ResponseEntity<List<Odontologo>> buscarPorNombre(@PathVariable("nombre") String nombre) {
+        Optional<List<Odontologo>> listaBuscados = odontologoService.findByNombre(nombre);
+        if (!listaBuscados.isEmpty()) {
+            return ResponseEntity.ok(listaBuscados.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }
 
