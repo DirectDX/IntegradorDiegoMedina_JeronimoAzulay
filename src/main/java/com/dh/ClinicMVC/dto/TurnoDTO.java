@@ -1,2 +1,17 @@
-package com.dh.ClinicMVC.dto;public class TurnoDTO {
+package com.dh.ClinicMVC.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class TurnoDTO {
+    private Long id;
+    private Long odontologo_id;
+    private Long paciente_id;
+    private String fecha;
 }

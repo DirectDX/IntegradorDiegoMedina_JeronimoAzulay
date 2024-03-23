@@ -21,11 +21,9 @@ public class Turno {
     private Long id;
     private LocalDate fecha;
     @ManyToOne
-    @JoinColumn(name="paciente_id")
     @JsonIgnoreProperties("turnoSet")
     private Paciente paciente;
     @ManyToOne
-    @JoinColumn(name="odontologo_id")
     @JsonIgnoreProperties("turnoSet")
     private Odontologo odontologo;
 }

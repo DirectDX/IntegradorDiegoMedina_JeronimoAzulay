@@ -17,3 +17,4 @@
 [2024-03-21 21:42:01] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@3a3cccc8
 [2024-03-21 21:42:46] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@12a703af
 [2024-03-21 21:42:55] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@33c34ac0
+[2024-03-22 22:12:19] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@6b12a3a

@@ -1,5 +1,8 @@
 package com.dh.ClinicMVC.controller;
 
+import com.dh.ClinicMVC.dto.TurnoDTO;
+import com.dh.ClinicMVC.dto.request.TurnoRequestDTO;
+import com.dh.ClinicMVC.dto.response.TurnoResponseDTO;
 import com.dh.ClinicMVC.entity.Paciente;
 import com.dh.ClinicMVC.entity.Turno;
 import com.dh.ClinicMVC.service.IOdontologoService;
@@ -35,30 +38,24 @@ public class TurnoController {
 
 
     //endpoint para guardar un turno
-//    @PostMapping
-//    public ResponseEntity<Turno> guardar(@RequestBody Turno turno) {
-//        ResponseEntity<Turno> response;
-//
-//        LOGGER.info("esto trae el turno: " + turno);
-////        vamos a chequear que exista el odontologo y la paciente
-//        if (odontologoService.buscarPorId(turno.getOdontologo().getId()) != null &&
-//                pacienteService.buscarPorId(turno.getPaciente().getId()) != null) {
-//            //setear una respuesta en 200 y vamos a hacer que devuelva el turno
-//            response = ResponseEntity.ok(turnoService.guardar(turno));
-//        } else {
-//            //si no existe el odontologo o el paciente
-//            response = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
-//        }
-//        return response;
-//    }
     @PostMapping
-    public ResponseEntity<Turno> guardarTurno(@RequestBody Turno turno) {
-        try {
-            Turno nuevoTurno = turnoService.guardar(turno);
-            return ResponseEntity.status(HttpStatus.CREATED).body(nuevoTurno);
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+    public ResponseEntity<TurnoResponseDTO> guardar(@RequestBody TurnoRequestDTO turnoRequestDTO) {
+        ResponseEntity<TurnoResponseDTO> response;
+
+        LOGGER.info("esto trae el turnoRequestDTO: " + turnoRequestDTO);
+//        vamos a chequear que exista el odontologo y la paciente
+        if (odontologoService.buscarPorId(turnoRequestDTO.getOdontologo_id()) != null &&
+                pacienteService.buscarPorId(turnoRequestDTO.getPaciente_id()) != null) {
+
+            //setear una respuesta en 200 y vamos a hacer que devuelva el turnoRequestDTO
+            response = ResponseEntity.ok(turnoService.guardar(turnoRequestDTO));
+
+        } else {
+            //si no existe el odontologo o el paciente
+            response = ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+
         }
+        return response;
     }
     @GetMapping("/{id}")
     public ResponseEntity<Turno> buscarPorId(@PathVariable Long id) {
