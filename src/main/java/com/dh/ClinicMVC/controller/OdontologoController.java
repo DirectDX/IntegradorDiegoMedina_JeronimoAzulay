@@ -45,8 +45,8 @@ public class OdontologoController {
        return odontologo != null ? ResponseEntity.ok(odontologo.get()) : ResponseEntity.notFound().build();
     }
 
-    @DeleteMapping
-    public ResponseEntity<String> eliminar(@RequestParam("id") Long id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> eliminar(@PathVariable("id") Long id) {
         ResponseEntity<String> response;
         Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(id);
         if (odontologoBuscado != null) {
