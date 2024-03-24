@@ -13,11 +13,11 @@ public interface IOdontologoService {
 
     List<Odontologo> listarTodos();
 
-    Odontologo buscarPorId(Long id);
+    Optional<Odontologo> buscarPorId(Long id);
     void actualizar(Odontologo odontologo);
     void eliminar(Long id);
     Optional<List<Odontologo>> findByNombre(String nombre);
     Optional<List<Odontologo>> findByApellido(String apellido);
     Optional<List<Odontologo>> findByMatricula(String matricula);
-
 }
+

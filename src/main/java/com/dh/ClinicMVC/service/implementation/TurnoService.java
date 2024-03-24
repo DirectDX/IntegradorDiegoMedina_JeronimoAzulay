@@ -1,12 +1,12 @@
 package com.dh.ClinicMVC.service.implementation;
 
-import com.dh.ClinicMVC.dto.TurnoDTO;
 import com.dh.ClinicMVC.dto.request.TurnoRequestDTO;
 import com.dh.ClinicMVC.dto.response.TurnoResponseDTO;
 import com.dh.ClinicMVC.entity.Odontologo;
 import com.dh.ClinicMVC.entity.Paciente;
 import com.dh.ClinicMVC.entity.Turno;
 
+import com.dh.ClinicMVC.repository.IOdontologoRepository;
 import com.dh.ClinicMVC.repository.IPacienteRepository;
 import com.dh.ClinicMVC.repository.ITurnosRepository;
 import com.dh.ClinicMVC.service.ITurnoService;
@@ -23,6 +23,7 @@ public class TurnoService implements ITurnoService {
 
     private ITurnosRepository turnoRepository;
     private IPacienteRepository pacienteRepository;
+    private IOdontologoRepository odontologoRepository;
 
     @Autowired
     public TurnoService(ITurnosRepository turnoRepository) {
@@ -31,7 +32,35 @@ public class TurnoService implements ITurnoService {
 
 
     @Override
-    public TurnoResponseDTO guardar(TurnoRequestDTO turnoRequestDTO) {
+    public TurnoResponseDTO guardar(TurnoRequestDTO turnoRequestDTO) throws Exception {
+
+        //convertir el String del turnoRequestDTO a LocalDate
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        //creamos el LocalDate que vamos a tener que persistir en la BD
+        LocalDate date = LocalDate.parse(turnoRequestDTO.getFecha(), formatter);
+
+        // chequeamos que el turno no tenga el mismo odontologo en la misma fecha y hora que un turno ya guardado
+        Optional<List<Turno>> turnosChequeoOdontologo = findByOdontologoId(turnoRequestDTO.getOdontologo_id());
+        if (turnosChequeoOdontologo.isPresent() && !turnosChequeoOdontologo.get().isEmpty()) {
+            List<Turno> turnos = turnosChequeoOdontologo.get();
+            for (Turno turno:turnos) {
+                if (turno.getFecha().equals(date)) {
+                    throw new Exception("Este odontologo ya tiene un turno asignado en esta fecha y hora");
+                }
+            }
+        }
+
+//        // chequeamos que el turno no tenga el mismo odontologo en la misma fecha y hora que un turno ya guardado
+//        Optional<List<Turno>> turnosChequeoPaciente = findByPacienteId(turnoRequestDTO.getPaciente_id());
+//        if (turnosChequeoPaciente.isPresent() && !turnosChequeoPaciente.get().isEmpty()) {
+//            List<Turno> turnos = turnosChequeoPaciente.get();
+//            for (Turno turno:turnos) {
+//                if (turno.getFecha().equals(date)) {
+//                    throw new Exception("No puedes poner campos vacios");
+//                }
+//            }
+//        }
+
         //mapear el dto que recibimos a una entidad
         //instanciar turnoEntity -> para persitirlo en la BD
         Turno turnoEntity = new Turno(); //Turno(null, null, null, null)
@@ -47,11 +76,6 @@ public class TurnoService implements ITurnoService {
         //seteamos Paciente y Odontologo a la entidad Turno
         turnoEntity.setOdontologo(odontologo);
         turnoEntity.setPaciente(paciente);
-
-        //convertir el String del turnoRequestDTO a LocalDate
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        //creamos el LocalDate que vamos a tener que persistir en la BD
-        LocalDate date = LocalDate.parse(turnoRequestDTO.getFecha(), formatter);
 
         //seteamos al turno la fecha
         turnoEntity.setFecha(date);

@@ -33,13 +33,8 @@ public class OdontologoService implements IOdontologoService {
     }
 
     @Override
-    public Odontologo buscarPorId(Long id) {
-        Optional<Odontologo> odontologoOptional = odontologoRepository.findById(id);
-        if (odontologoOptional.isPresent())
-        return odontologoOptional.get();
-        else {
-            return null;
-        }
+    public Optional<Odontologo> buscarPorId(Long id) {
+      return odontologoRepository.findById(id);
     }
 
     @Override
@@ -62,8 +57,11 @@ public class OdontologoService implements IOdontologoService {
         return odontologoRepository.findByApellido(apellido);
     }
 
+
     @Override
     public Optional<List<Odontologo>> findByMatricula(String matricula) {
         return odontologoRepository.findByMatricula(matricula);
     }
+
+
 }

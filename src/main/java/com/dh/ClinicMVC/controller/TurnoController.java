@@ -39,7 +39,7 @@ public class TurnoController {
 
     //endpoint para guardar un turno
     @PostMapping
-    public ResponseEntity<TurnoResponseDTO> guardar(@RequestBody TurnoRequestDTO turnoRequestDTO) {
+    public ResponseEntity<TurnoResponseDTO> guardar(@RequestBody TurnoRequestDTO turnoRequestDTO) throws Exception {
         ResponseEntity<TurnoResponseDTO> response;
 
         LOGGER.info("esto trae el turnoRequestDTO: " + turnoRequestDTO);

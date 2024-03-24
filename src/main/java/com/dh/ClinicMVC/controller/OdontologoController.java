@@ -30,7 +30,7 @@ public class OdontologoController {
         }
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoOdontologo);
     }
-    @GetMapping("/list")
+    @GetMapping()
     public  ResponseEntity<List<Odontologo>> listarTodos() {
         List<Odontologo> listaBuscados = odontologoService.listarTodos();
         if (!listaBuscados.isEmpty()) {
@@ -40,14 +40,15 @@ public class OdontologoController {
         }
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Odontologo> buscarPorId(@RequestParam Long id) {
-        Odontologo odontologo = odontologoService.buscarPorId(id);
-       return odontologo != null ? ResponseEntity.ok(odontologo) : ResponseEntity.notFound().build();
+    public ResponseEntity<Odontologo> buscarPorId(@PathVariable Long id) {
+       Optional<Odontologo> odontologo = odontologoService.buscarPorId(id);
+       return odontologo != null ? ResponseEntity.ok(odontologo.get()) : ResponseEntity.notFound().build();
     }
+
     @DeleteMapping
     public ResponseEntity<String> eliminar(@RequestParam("id") Long id) {
         ResponseEntity<String> response;
-        Odontologo odontologoBuscado = odontologoService.buscarPorId(id);
+        Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(id);
         if (odontologoBuscado != null) {
             odontologoService.eliminar(id);
             response = ResponseEntity.ok("Se elimino el odontologo con id " + id);
@@ -60,7 +61,7 @@ public class OdontologoController {
     @PutMapping
     public ResponseEntity<String> actualizar(@RequestBody Odontologo odontologo) {
         ResponseEntity<String> response;
-        Odontologo odontologoBuscado = odontologoService.buscarPorId(odontologo.getId());
+       Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(odontologo.getId());
         if (odontologoBuscado != null) {
             odontologoService.actualizar(odontologo);
             response = ResponseEntity.ok("Se actualizó el odontologo con id " + odontologo.getId());
@@ -99,6 +100,6 @@ public class OdontologoController {
             return ResponseEntity.notFound().build();
         }
     }
-
 }
+
 

@@ -1,12 +1,8 @@
 package com.dh.ClinicMVC.service.implementation;
-
 import com.dh.ClinicMVC.entity.Odontologo;
-import com.dh.ClinicMVC.entity.Paciente;
 import com.dh.ClinicMVC.repository.IOdontologoRepository;
-import com.dh.ClinicMVC.service.IOdontologoService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class OdontologoServiceTest {
@@ -15,7 +11,6 @@ class OdontologoServiceTest {
     @Test
     void guardar() {
 
-        odontologoRepository.save(odontologo);
     }
 
     @Test

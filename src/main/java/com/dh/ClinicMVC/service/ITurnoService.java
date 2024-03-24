@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface ITurnoService {
-    TurnoResponseDTO guardar(TurnoRequestDTO turno);
+    TurnoResponseDTO guardar(TurnoRequestDTO turno) throws Exception;
     List<Turno> listarTodos();
 
     Turno buscarPorId(Long id);
