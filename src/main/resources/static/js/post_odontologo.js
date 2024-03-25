@@ -9,11 +9,11 @@ window.addEventListener('load', function () {
 
        //creamos un JSON que tendrá los datos del nuevo odontólogo
         const formData = {
-            nombre: document.querySelector('#nombre').value,
-            apellido: document.querySelector('#apellido').value,
-            matricula: document.querySelector('#matricula').value,
-
+            nombre: document.querySelector('#add_nombre').value,
+            apellido: document.querySelector('#add_apellido').value,
+            matricula: document.querySelector('#add_matricula').value
         };
+
         //invocamos utilizando la función fetch la API odontólogos con el método POST que guardará
         //el odontólogo que enviaremos en formato JSON
         const url = '/odontologos';
@@ -23,7 +23,7 @@ window.addEventListener('load', function () {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(formData)
-        }
+        };
 
         fetch(url, settings)
             .then(response => response.json())
@@ -32,11 +32,12 @@ window.addEventListener('load', function () {
                  //se agrego bien
                  let successAlert = '<div class="alert alert-success alert-dismissible">' +
                      '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                     '<strong></strong> Odontólogo agregado </div>'
+                     '<strong>Odontólogo agregado:</strong> El odontólogo ha sido agregado correctamente.</div>';
 
-                 document.querySelector('#response').innerHTML = successAlert;
-                 document.querySelector('#response').style.display = "block";
+                 document.querySelector('#add_response').innerHTML = successAlert;
+                 document.querySelector('#add_response').style.display = "block";
                  resetUploadForm();
+                 
 
             })
             .catch(error => {
@@ -44,28 +45,33 @@ window.addEventListener('load', function () {
                     //no se pudo guardar y se intente nuevamente
                     let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
                                      '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                     '<strong> Error intente nuevamente</strong> </div>'
+                                     '<strong>Error:</strong> Hubo un problema al agregar el odontólogo. Intente nuevamente.</div>';
 
-                      document.querySelector('#response').innerHTML = errorAlert;
-                      document.querySelector('#response').style.display = "block";
+                      document.querySelector('#add_response').innerHTML = errorAlert;
+                      document.querySelector('#add_response').style.display = "block";
                      //se dejan todos los campos vacíos por si se quiere ingresar otro odontólogo
-                     resetUploadForm();})
+                     resetUploadForm();
+            });
+
+        // Prevenir el comportamiento por defecto del formulario
+        event.preventDefault();
+        
     });
 
 
     function resetUploadForm(){
-        document.querySelector('#nombre').value = "";
-        document.querySelector('#apellido').value = "";
-        document.querySelector('#matricula').value = "";
-
+        document.querySelector('#add_nombre').value = "";
+        document.querySelector('#add_apellido').value = "";
+        document.querySelector('#add_matricula').value = "";
+        window.location.reload();
     }
 
     (function(){
         let pathname = window.location.pathname;
         if(pathname === "/"){
-            document.querySelector(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/dentistList.html") {
-            document.querySelector(".nav .nav-item a:last").addClass("active");
+            document.querySelector(".nav .nav-item a:first").classList.add("active");
+        } else if (pathname == "/odontologoLista.html") {
+            document.querySelector(".nav .nav-item a:last").classList.add("active");
         }
     })();
 });

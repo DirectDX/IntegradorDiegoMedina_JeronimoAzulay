@@ -1,7 +1,7 @@
 
-    // Function to delete dentist
-    function deleteDentist(id) {
-        const url = '/odontologos/' + id;
+    // Function to delete a patient
+    function deletePatient(id) {
+        const url = '/pacientes?id=' + id;
         const settings = {
             method: 'DELETE'
         };
@@ -16,11 +16,11 @@
     }
 
     // Event listener to handle delete button clicks
-    document.getElementById("dentistTableBody").addEventListener("click", function (event) {
+    document.getElementById("patientTable").addEventListener("click", function (event) {
         if (event.target && event.target.nodeName === "IMG") {
-            const dentistId = event.target.closest('tr').querySelector('.td_id').textContent;
-            if (confirm("¿Estás seguro de que quieres eliminar a este odontólogo?")) {
-                deleteDentist(dentistId);
+            const patientId = event.target.closest('tr').querySelector('.td_id').textContent;
+            if (confirm("¿Estás seguro de que quieres eliminar a este paciente?")) {
+                deletePatient(patientId);
             }
         }
     });

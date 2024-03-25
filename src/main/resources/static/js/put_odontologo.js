@@ -1,56 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const formulario = document.querySelector('#put_dentist');
-    const selectDentists = document.getElementById("select_dentists");
+    const formulario = document.querySelector('#update_dentist_form');
 
-    // Fetching data from the dentist API para hacer la lista
-    const urlGet = '/odontologos';
-    const settingsGet = {
-        method: 'GET'
-    };
-    
-    fetch(urlGet, settingsGet)
-        .then(response => response.json())
-        .then(data => {
-            // Itera sobre los datos de los odontólogos y agrega opciones al select
-            data.forEach(dentist => {
-                const option = document.createElement("option");
-                option.value = dentist.id; // Asigna el ID del odontólogo al valor de la opción
-                option.textContent = `${dentist.nombre} ${dentist.apellido}`; // Texto a mostrar en la opción
-                // Asigna los atributos data-* de la opción para su posterior uso
-                option.dataset.id = dentist.id;
-                option.dataset.nombre = dentist.nombre;
-                option.dataset.apellido = dentist.apellido;
-                option.dataset.matricula = dentist.matricula;
-                selectDentists.appendChild(option);
-            });
-        })
-        .catch(error => console.error('Error al obtener la lista de odontólogos:', error));
-
-    // Event listener para manejar el cambio en el selector
-    selectDentists.addEventListener('change', function () {
-        const selectedOption = this.options[this.selectedIndex];
-        // Asignar los valores de la opción seleccionada como placeholders en el formulario
-        document.getElementById('id').value = selectedOption.getAttribute('data-id');
-        document.getElementById('nombre').value = selectedOption.getAttribute('data-nombre');
-        document.getElementById('apellido').value = selectedOption.getAttribute('data-apellido');
-        document.getElementById('matricula').value = selectedOption.getAttribute('data-matricula');
-    });
-
-    //Ante un submit del formulario se ejecutará la siguiente funcion
+    // Event listener for the form submission
     formulario.addEventListener('submit', function (event) {
-        event.preventDefault(); // Evita que se recargue la página al enviar el formulario
+        //event.preventDefault(); // Prevent page reload on form submission
 
-        //creamos un JSON que tendrá los datos del nuevo odontólogo
+        // Create a JSON object with the dentist data from the form
         const formData = {
-            id: document.querySelector('#id').value,
-            nombre: document.querySelector('#nombre').value,
-            apellido: document.querySelector('#apellido').value,
-            matricula: document.querySelector('#matricula').value,
+            id: parseInt(document.querySelector('#put_dentist_id').value),
+            nombre: document.querySelector('#put_nombre').value,
+            apellido: document.querySelector('#put_apellido').value,
+            matricula: document.querySelector('#put_matricula').value
         };
 
-        //invocamos utilizando la función fetch la API odontólogos con el método PUT que actualizará
-        //el odontólogo que enviaremos en formato JSON
-        const urlPut = '/odontologos';
+
+
+        // Call the PUT endpoint to update the dentist data
+        const url = `/odontologos`;
         const settingsPut = {
             method: 'PUT',
             headers: {
@@ -58,62 +24,49 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             body: JSON.stringify(formData)
         };
+        console.log(settingsPut.body)
 
-        fetch(urlPut, settingsPut)
-            .then(response => response.json())
+        fetch(url, settingsPut)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Error updating dentist data');
+                }
+                return response.json();
+            })
             .then(data => {
-                //Si no hay ningún error se muestra un mensaje diciendo que el odontólogo se actualizó correctamente
+                // If successful, show a success message
                 let successAlert = '<div class="alert alert-success alert-dismissible">' +
                     '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                    '<strong></strong> Odontólogo actualizado </div>';
+                    '<strong>Success!</strong> Dentist data updated successfully.</div>';
 
-                document.querySelector('#response').innerHTML = successAlert;
-                document.querySelector('#response').style.display = "block";
-                resetUploadForm();
+                document.querySelector('#put_add_response').innerHTML = successAlert;
+                document.querySelector('#put_add_response').style.display = "block";
+                resetForm();
+                window.location.reload();
             })
             .catch(error => {
-                //Si hay algún error se muestra un mensaje diciendo que el odontólogo no se pudo actualizar y se intente nuevamente
+                // If an error occurs, show an error message
                 let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
                     '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                    '<strong> Error: </strong> ' + error.message + '</div>';
+                    '<strong>Error:</strong> ' + error.message + '</div>';
 
-                document.querySelector('#response').innerHTML = errorAlert;
-                document.querySelector('#response').style.display = "block";
+                document.querySelector('#put_add_response').innerHTML = errorAlert;
+                document.querySelector('#put_add_response').style.display = "block";
             });
-        
-            fetch(url, settings)
-                .then(response => response.json())
-                .then(data => {
-                    // Itera sobre los datos de los odontólogos y agrega opciones al select
-                    data.forEach(dentist => {
-                        const option = document.createElement("option");
-                        option.value = dentist.id; // Asigna el ID del odontólogo al valor de la opción
-                        option.textContent = `${dentist.nombre} ${dentist.apellido}`; // Texto a mostrar en la opción
-                        // Asigna los atributos data-* de la opción para su posterior uso
-                        option.dataset.id = dentist.id;
-                        option.dataset.nombre = dentist.nombre;
-                        option.dataset.apellido = dentist.apellido;
-                        option.dataset.matricula = dentist.matricula;
-                        selectDentists.appendChild(option);
-                    });
-                })
-                .catch(error => console.error('Error al obtener la lista de odontólogos:', error));
-        
     });
 
-    function resetUploadForm() {
-        document.querySelector('#id').value = "";
-        document.querySelector('#nombre').value = "";
-        document.querySelector('#apellido').value = "";
-        document.querySelector('#matricula').value = "";
+    // Function to reset the form fields
+    function resetForm() {
+        document.querySelector('#put_dentist_id').value = "";
+        document.querySelector('#put_nombre').value = "";
+        document.querySelector('#put_apellido').value = "";
+        document.querySelector('#put_matricula').value = "";
     }
-
-    // Verificar la ruta actual y agregar la clase "active" al enlace correspondiente en la barra de navegación
-    (function () {
+    (function(){
         let pathname = window.location.pathname;
-        if (pathname === "/") {
+        if(pathname === "/"){
             document.querySelector(".nav .nav-item a:first").classList.add("active");
-        } else if (pathname === "/dentistList.html") {
+        } else if (pathname == "/odontologoLista.html") {
             document.querySelector(".nav .nav-item a:last").classList.add("active");
         }
     })();

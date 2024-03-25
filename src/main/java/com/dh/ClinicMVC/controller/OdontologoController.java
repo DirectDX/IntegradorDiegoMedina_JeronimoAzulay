@@ -59,12 +59,12 @@ public class OdontologoController {
         return response;
     }
     @PutMapping
-    public ResponseEntity<String> actualizar(@RequestBody Odontologo odontologo) {
-        ResponseEntity<String> response;
+    public ResponseEntity<Odontologo> actualizar(@RequestBody Odontologo odontologo) {
+        ResponseEntity<Odontologo> response;
        Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(odontologo.getId());
         if (odontologoBuscado != null) {
             odontologoService.actualizar(odontologo);
-            response = ResponseEntity.ok("Se actualizó el odontologo con id " + odontologo.getId());
+            response = new ResponseEntity(odontologo, HttpStatus.OK);
         } else {
             response = ResponseEntity.notFound().build();
         }
