@@ -1,7 +1,7 @@
 
     // Function to delete a patient
     function deletePatient(id) {
-        const url = '/pacientes?id=' + id;
+        const url = '/pacientes/'+ id;
         const settings = {
             method: 'DELETE'
         };
