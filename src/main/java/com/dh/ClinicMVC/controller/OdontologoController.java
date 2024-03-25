@@ -19,6 +19,7 @@ public class OdontologoController {
     public OdontologoController(OdontologoService odontologoService) {
         this.odontologoService = odontologoService;
     }
+
     @PostMapping
     public ResponseEntity<Odontologo> guardar(@RequestBody Odontologo odontologo) {
         // como manejar el error 500 para cuando ponemos 2 odontologos con la misma matricula
@@ -30,8 +31,9 @@ public class OdontologoController {
         }
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoOdontologo);
     }
+
     @GetMapping()
-    public  ResponseEntity<List<Odontologo>> listarTodos() {
+    public ResponseEntity<List<Odontologo>> listarTodos() {
         List<Odontologo> listaBuscados = odontologoService.listarTodos();
         if (!listaBuscados.isEmpty()) {
             return ResponseEntity.ok(listaBuscados);
@@ -39,13 +41,15 @@ public class OdontologoController {
             return ResponseEntity.notFound().build();
         }
     }
+
+
     @PutMapping
-    public ResponseEntity<String> actualizar(@RequestBody Odontologo odontologo) {
-        ResponseEntity<String> response;
+    public ResponseEntity<Odontologo> actualizar(@RequestBody Odontologo odontologo) {
+        ResponseEntity<Odontologo> response;
         Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(odontologo.getId());
         if (odontologoBuscado != null) {
             odontologoService.actualizar(odontologo);
-            response = ResponseEntity.ok("Se actualizó el odontologo con id " + odontologo.getId());
+            response = new ResponseEntity(odontologo, HttpStatus.OK);
         } else {
             response = ResponseEntity.notFound().build();
         }
@@ -70,7 +74,6 @@ public class OdontologoController {
         }
         return response;
     }
-
 
     @GetMapping("/matricula/{matricula}")
     public  ResponseEntity<List<Odontologo>> buscarPorMatricula(@PathVariable("matricula") String matricula) {

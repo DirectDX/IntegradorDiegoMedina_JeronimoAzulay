@@ -31,10 +31,12 @@ public class OdontologoService implements IOdontologoService {
             return odontologoRepository.save(odontologo);
         } else {
             // La matrícula ya existe en la base de datos
+
             throw new Exception("La matrícula del odontólogo ya existe");
         }
 
     }
+
     @Override
     public List<Odontologo> listarTodos() {
         return odontologoRepository.findAll();
