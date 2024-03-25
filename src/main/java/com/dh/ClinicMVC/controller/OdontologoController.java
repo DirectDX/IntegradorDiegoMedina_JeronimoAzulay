@@ -39,6 +39,18 @@ public class OdontologoController {
             return ResponseEntity.notFound().build();
         }
     }
+    @PutMapping
+    public ResponseEntity<String> actualizar(@RequestBody Odontologo odontologo) {
+        ResponseEntity<String> response;
+        Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(odontologo.getId());
+        if (odontologoBuscado != null) {
+            odontologoService.actualizar(odontologo);
+            response = ResponseEntity.ok("Se actualizó el odontologo con id " + odontologo.getId());
+        } else {
+            response = ResponseEntity.notFound().build();
+        }
+        return response;
+    }
     @GetMapping("/{id}")
     public ResponseEntity<Odontologo> buscarPorId(@PathVariable Long id) {
        Optional<Odontologo> odontologo = odontologoService.buscarPorId(id);
@@ -58,18 +70,7 @@ public class OdontologoController {
         }
         return response;
     }
-    @PutMapping
-    public ResponseEntity<String> actualizar(@RequestBody Odontologo odontologo) {
-        ResponseEntity<String> response;
-       Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(odontologo.getId());
-        if (odontologoBuscado != null) {
-            odontologoService.actualizar(odontologo);
-            response = ResponseEntity.ok("Se actualizó el odontologo con id " + odontologo.getId());
-        } else {
-            response = ResponseEntity.notFound().build();
-        }
-        return response;
-    }
+
 
     @GetMapping("/matricula/{matricula}")
     public  ResponseEntity<List<Odontologo>> buscarPorMatricula(@PathVariable("matricula") String matricula) {

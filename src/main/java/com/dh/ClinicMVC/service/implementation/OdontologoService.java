@@ -21,11 +21,19 @@ public class OdontologoService implements IOdontologoService {
     }
     @Override
     public Odontologo guardar(Odontologo odontologo) throws Exception {
-        if (odontologo.getNombre() == null || odontologo.getApellido() == null || odontologo.getMatricula()== null
-                || odontologo.getNombre().trim() == "" || odontologo.getApellido().trim() == "" || odontologo.getMatricula().trim() == "") {
-            throw new Exception("No puedes poner campos vacios");
+        Optional<List<Odontologo>> odontologoBDList = odontologoRepository.findByMatricula(odontologo.getMatricula());
+        if (odontologoBDList.get().isEmpty()) {
+            // La matrícula no existe, verificar campos vacíos y guardar el odontólogo
+            if (odontologo.getNombre() == null || odontologo.getApellido() == null || odontologo.getMatricula() == null
+                    || odontologo.getNombre().trim().isEmpty() || odontologo.getApellido().trim().isEmpty() || odontologo.getMatricula().trim().isEmpty()) {
+                throw new Exception("No puedes poner campos vacíos");
+            }
+            return odontologoRepository.save(odontologo);
+        } else {
+            // La matrícula ya existe en la base de datos
+            throw new Exception("La matrícula del odontólogo ya existe");
         }
-        return odontologoRepository.save(odontologo);
+
     }
     @Override
     public List<Odontologo> listarTodos() {
