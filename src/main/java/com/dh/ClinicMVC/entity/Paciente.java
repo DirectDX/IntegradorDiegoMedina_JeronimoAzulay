@@ -26,7 +26,7 @@ public class Paciente {
     @Column(unique = true, nullable = false)
     private String dni;
     private LocalDate fechaIngreso;
-    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Domicilio domicilio;
     @OneToMany(mappedBy = "paciente")
     private Set<Turno> turnoSet = new HashSet<>();

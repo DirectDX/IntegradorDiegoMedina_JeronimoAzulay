@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
             fechaIngreso: document.querySelector('#add_fechaIngreso').value,
             domicilio: {
                 calle: document.querySelector('#add_calle').value,
-                numero: document.querySelector('#add_numero').value,
+                numero: parseInt(document.querySelector('#add_numero').value),
                 localidad: document.querySelector('#add_localidad').value,
                 provincia: document.querySelector('#add_provincia').value
             }
@@ -69,6 +69,10 @@ window.addEventListener('load', function () {
         document.querySelector('#add_numero').value = "";
         document.querySelector('#add_localidad').value = "";
         document.querySelector('#add_provincia').value = "";
+        setTimeout(() => {
+            window.location.reload();
+          }, 3000);
+        
     }
 
     // Agregar la clase "active" al enlace correspondiente en la barra de navegación

@@ -18,51 +18,63 @@ window.addEventListener('load', function () {
             });
     }
 
-    // Function to populate the patient table with the received data
-    function populatePatientTable(patients) {
-        const tableBody = document.getElementById('patientTableBody');
-        tableBody.innerHTML = ''; // Clearing previous content of the table
+// Function to populate the patient table with the received data
+function populatePatientTable(patients) {
+    const tableBody = document.getElementById('patientTableBody');
+    tableBody.innerHTML = ''; // Clearing previous content of the table
 
-        patients.forEach(patient => {
-            const row = document.createElement('tr');
-            row.id = 'tr_' + patient.id;
+    patients.forEach(patient => {
+        const row = document.createElement('tr');
+        row.id = 'tr_' + patient.id;
 
-            const idCell = document.createElement('td');
-            idCell.textContent = patient.id;
-            row.appendChild(idCell);
+        const idCell = document.createElement('td');
+        idCell.textContent = patient.id;
+        row.appendChild(idCell);
 
-            const nombreCell = document.createElement('td');
-            nombreCell.textContent = patient.nombre;
-            row.appendChild(nombreCell);
+        const nombreCell = document.createElement('td');
+        nombreCell.textContent = patient.nombre;
+        row.appendChild(nombreCell);
 
-            const apellidoCell = document.createElement('td');
-            apellidoCell.textContent = patient.apellido;
-            row.appendChild(apellidoCell);
+        const apellidoCell = document.createElement('td');
+        apellidoCell.textContent = patient.apellido;
+        row.appendChild(apellidoCell);
 
-            const dniCell = document.createElement('td');
-            dniCell.textContent = patient.dni;
-            row.appendChild(dniCell);
+        const dniCell = document.createElement('td');
+        dniCell.textContent = patient.dni;
+        row.appendChild(dniCell);
 
-            const ingresoCell = document.createElement('td');
-            ingresoCell.textContent = patient.fechaIngreso;
-            row.appendChild(ingresoCell);
+        const ingresoCell = document.createElement('td');
+        ingresoCell.textContent = patient.fechaIngreso;
+        row.appendChild(ingresoCell);
+
+        // Accessing address details
+        if (patient.domicilio) {
+            const domicilio = patient.domicilio;
 
             const calleCell = document.createElement('td');
-            calleCell.textContent = patient.calle;
+            calleCell.textContent = domicilio.calle;
             row.appendChild(calleCell);
 
             const numeroCell = document.createElement('td');
-            numeroCell.textContent = patient.numero;
+            numeroCell.textContent = domicilio.numero;
             row.appendChild(numeroCell);
 
             const localidadCell = document.createElement('td');
-            localidadCell.textContent = patient.localidad;
+            localidadCell.textContent = domicilio.localidad;
             row.appendChild(localidadCell);
 
             const provinciaCell = document.createElement('td');
-            provinciaCell.textContent = patient.provincia;
+            provinciaCell.textContent = domicilio.provincia;
             row.appendChild(provinciaCell);
-
+        } else {
+            // If domicilio is not present, add empty cells
+            for (let i = 0; i < 4; i++) {
+                const emptyCell = document.createElement('td');
+                emptyCell.textContent = '';
+                row.appendChild(emptyCell);
+            }
+        }
+    
             // Create cell for "Eliminar" button
             const deleteCell = document.createElement('td');
             const deleteButton = document.createElement('button');
@@ -77,7 +89,7 @@ window.addEventListener('load', function () {
             });
             deleteCell.appendChild(deleteButton);
             row.appendChild(deleteCell);
-
+    
             // Create cell for "Actualizar" button
             const updateCell = document.createElement('td');
             const updateButton = document.createElement('button');
@@ -87,20 +99,11 @@ window.addEventListener('load', function () {
             updateButton.dataset.id = patient.id; // Save patient ID in the button
             updateCell.appendChild(updateButton);
             row.appendChild(updateCell);
-
+    
             tableBody.appendChild(row);
         });
-
-        // Event listener to handle clicks on update buttons
-        document.querySelectorAll('.update-btn').forEach(btn => {
-            btn.addEventListener('click', function () {
-                const patientId = this.dataset.id;
-                // Call function to open the update modal with the selected patient's data
-                openUpdateModal(patientId);
-            });
-        });
     }
-
+    
     // Function to open the update modal with the selected patient's data
     function openUpdateModal(patientId) {
         // Call the API to get the patient data by ID
