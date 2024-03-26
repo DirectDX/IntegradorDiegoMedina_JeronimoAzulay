@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
         fetch(url, settingsPut)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Error updating dentist data');
+                    throw new Error('Error Actualizando datos del odontologo');
                 }
                 return response.json();
             })
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let pathname = window.location.pathname;
         if(pathname === "/"){
             document.querySelector(".nav .nav-item a:first").classList.add("active");
-        } else if (pathname == "/odontologoLista.html") {
+        } else if (pathname == "/odontologos.html") {
             document.querySelector(".nav .nav-item a:last").classList.add("active");
         }
     })();

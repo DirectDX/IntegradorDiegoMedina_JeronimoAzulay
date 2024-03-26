@@ -7,15 +7,15 @@ window.addEventListener('load', function () {
     formulario.addEventListener('submit', function (event) {
         // Creamos un JSON que tendrá los datos del nuevo paciente
         const formData = {
-            nombre: document.querySelector('#nombre').value,
-            apellido: document.querySelector('#apellido').value,
-            dni: document.querySelector('#dni').value,
-            fechaIngreso: document.querySelector('#fechaIngreso').value,
+            nombre: document.querySelector('#add_nombre').value,
+            apellido: document.querySelector('#add_apellido').value,
+            dni: document.querySelector('#add_dni').value,
+            fechaIngreso: document.querySelector('#add_fechaIngreso').value,
             domicilio: {
-                calle: document.querySelector('#calle').value,
-                numero: document.querySelector('#numero').value,
-                localidad: document.querySelector('#localidad').value,
-                provincia: document.querySelector('#provincia').value
+                calle: document.querySelector('#add_calle').value,
+                numero: parseInt(document.querySelector('#add_numero').value),
+                localidad: document.querySelector('#add_localidad').value,
+                provincia: document.querySelector('#add_provincia').value
             }
         };
 
@@ -61,14 +61,18 @@ window.addEventListener('load', function () {
     });
 
     function resetUploadForm() {
-        document.querySelector('#nombre').value = "";
-        document.querySelector('#apellido').value = "";
-        document.querySelector('#dni').value = "";
-        document.querySelector('#fechaIngreso').value = "";
-        document.querySelector('#calle').value = "";
-        document.querySelector('#numero').value = "";
-        document.querySelector('#localidad').value = "";
-        document.querySelector('#provincia').value = "";
+        document.querySelector('#add_nombre').value = "";
+        document.querySelector('#add_apellido').value = "";
+        document.querySelector('#add_dni').value = "";
+        document.querySelector('#add_fechaIngreso').value = "";
+        document.querySelector('#add_calle').value = "";
+        document.querySelector('#add_numero').value = "";
+        document.querySelector('#add_localidad').value = "";
+        document.querySelector('#add_provincia').value = "";
+        setTimeout(() => {
+            window.location.reload();
+          }, 3000);
+        
     }
 
     // Agregar la clase "active" al enlace correspondiente en la barra de navegación
@@ -76,7 +80,7 @@ window.addEventListener('load', function () {
         let pathname = window.location.pathname;
         if (pathname === "/") {
             document.querySelector(".nav .nav-item a:first").classList.add("active");
-        } else if (pathname === "/pacienteLista.html") {
+        } else if (pathname === "/pacientes.html") {
             document.querySelector(".nav .nav-item a:last").classList.add("active");
         }
     })();

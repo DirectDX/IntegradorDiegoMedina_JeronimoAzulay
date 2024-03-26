@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Pacientes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script text="text/javascript" src="/js/get_paciente.js"></script>
+    <script text="text/javascript" src="/js/post_paciente.js"></script>
+    <script text="text/javascript" src="/js/put_paciente.js"></script>
+    <script text="text/javascript" src="/js/delete_paciente.js"></script>
+</head>
+<style>
+    th{
+        text-align: center;
+        color: #188291;
+    }
+</style>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <a class="navbar-brand" href="/index.html">
+            <img src="./assets/logo.png" alt="logo diente">
+            <span id="title">Clínica Odontológica</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <div class="navbar-nav">
+            <a class="nav-link" aria-current="page" href="./index.html">INICIO</a>
+            <a class="nav-link" href="./turnos.html">TURNOS</a>
+            <a class="nav-link" href="./odontologos.html">ODONTOLOGOS</a>
+            <a class="nav-link active" href="./pacientes.html">PACIENTES</a>
+        </div>
+    </nav>
+
+
+<div class="container-fluid">
+    <div class="container">
+        <h1 style="text-align: center;">Gestión de Pacientes</h1>
+        <div class="row d-flex">
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+            <img src="./assets/paciente.png" alt="icono paciente">
+
+            </div>
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addPacienteModal">
+                    Agregar Paciente
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+            <!-- Modal Paciente add -->
+            <div class="modal fade" id="addPacienteModal" tabindex="-1" aria-labelledby="addPacienteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Agregar Paciente</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-sm-12" style="background-color:gainsboro; padding:10px; border-radius:3px">
+                                  <form id="add_new_patient">
+                                    <div class="form-group">
+                                      <label class="control-label" for="add_nombre">Nombre:</label>
+                                      <input type="text" class="form-control" id="add_nombre" placeholder="Ingrese el nombre" name="nombre" required></input>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label" for="add_apellido">Apellido:</label>
+                                      <input type="text" class="form-control" id="add_apellido" placeholder="Ingrese el apellido" name="apellido" required></input>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label" for="add_dni">DNI:</label>
+                                      <input type="text" class="form-control" id="add_dni" placeholder="Ingrese el DNI" name="dni" required></input>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label" for="add_fechaIngreso">Fecha de Ingreso:</label>
+                                      <input type="date" class="form-control" id="add_fechaIngreso" name="fechaIngreso" required></input>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label" for="add_calle">Calle:</label>
+                                      <input type="text" class="form-control" id="add_calle" placeholder="Ingrese la calle" name="calle" ></input>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label" for="add_numero">Número:</label>
+                                      <input type="text" class="form-control" id="add_numero" placeholder="Ingrese el número" name="numero" ></input>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label" for="add_localidad">Localidad:</label>
+                                      <input type="text" class="form-control" id="add_localidad" placeholder="Ingrese la localidad" name="localidad" ></input>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label" for="add_provincia">Provincia:</label>
+                                      <input type="text" class="form-control" id="add_provincia" placeholder="Ingrese la provincia" name="provincia" ></input>
+                                    </div>
+                                    <button type="submit" class="btn btn-danger"
+                                        id="btn-add-new-patient">Guardar</button>
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                  </form>
+                                  <div id="response" style="display:none; margin-top:10px"></div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="modal fade" id="putModalPatient" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="putModalLabel">Actualizar Paciente</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="update_patient_form">
+                                        <div class="form-group">
+                                            <label for="patient_id">ID:</label>
+                                            <input type="text" class="form-control" id="put_patient_id" disabled>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label" for="put_nombre">Nombre:</label>
+                                            <input type="text" class="form-control" id="put_nombre" placeholder="Ingrese el nombre" name="nombre" ></input>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label" for="put_apellido">Apellido:</label>
+                                            <input type="text" class="form-control" id="put_apellido" placeholder="Ingrese el apellido" name="apellido" ></input>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label" for="put_dni">DNI:</label>
+                                            <input type="text" class="form-control" id="put_dni" placeholder="Ingrese el DNI" name="dni" ></input>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label" for="put_fechaIngreso">Fecha de Ingreso:</label>
+                                            <input type="date" class="form-control" id="put_fechaIngreso" name="fechaIngreso" ></input>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label" for="put_calle">Calle:</label>
+                                            <input type="text" class="form-control" id="put_calle" placeholder="Ingrese la calle" name="calle" ></input>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label" for="put_numero">Número:</label>
+                                            <input type="text" class="form-control" id="put_numero" placeholder="Ingrese el número" name="numero" ></input>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label" for="put_localidad">Localidad:</label>
+                                            <input type="text" class="form-control" id="put_localidad" placeholder="Ingrese la localidad" name="localidad" ></input>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label" for="put_provincia">Provincia:</label>
+                                            <input type="text" class="form-control" id="put_provincia" placeholder="Ingrese la provincia" name="provincia" ></input>
+                                          </div>
+                                          <button type="submit" class="btn btn-danger"
+                                              id="btn-put-patient">Actualizar</button>
+                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+      
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+    <div id="div_patient_table">
+        <div class="row col-md-12 table-responsive">
+            <table id="patientTable" class="table table-striped">
+                <thead>
+                <tr>
+                    <th colspan="5" style="text-align: center; background-color: #188291; color: azure;">Datos Paciente</th>
+                    <th colspan="4" style="text-align: center; background-color: azure; color: #188291;">Domicilio</th>
+                    <th colspan="2" style="text-align: center; background-color: #188291; color: azure;">Acciones</th>
+                </tr>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>DNI</th>
+                    <th>Ingreso</th>
+                    <th>Calle</th>
+                    <th>Numero</th>
+                    <th>Localidad</th>
+                    <th>Provincia</th>
+                    <th>Eliminar</th>
+                    <th>Actualizar</th>
+                </tr>
+                </thead>
+                <tbody id="patientTableBody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
