@@ -1,15 +1,18 @@
 package com.dh.ClinicMVC.service;
 
+import com.dh.ClinicMVC.entity.Odontologo;
 import com.dh.ClinicMVC.entity.Paciente;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface IPacienteService {
-    Paciente guardar (Paciente paciente);
+    Paciente guardar (Paciente paciente) throws Exception;
 
     List<Paciente> listarTodos();
 
-    Paciente buscarPorId(Long id);
-    void actualizar(Paciente paciente);
+    Optional<Paciente> buscarPorId(Long id);
+    void actualizar(Paciente paciente) throws Exception;
     void eliminar(Long id);
+    Optional<Odontologo> findByDni(String dni);
 }

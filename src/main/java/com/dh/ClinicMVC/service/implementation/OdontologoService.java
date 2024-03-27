@@ -21,8 +21,8 @@ public class OdontologoService implements IOdontologoService {
     }
     @Override
     public Odontologo guardar(Odontologo odontologo) throws Exception {
-        Optional<List<Odontologo>> odontologoBDList = odontologoRepository.findByMatricula(odontologo.getMatricula());
-        if (odontologoBDList.get().isEmpty()) {
+        Optional<Odontologo> odontologoOptional = odontologoRepository.findByMatricula(odontologo.getMatricula());
+        if (odontologoOptional.isEmpty()) {
             // La matrícula no existe, verificar campos vacíos y guardar el odontólogo
             if (odontologo.getNombre() == null || odontologo.getApellido() == null || odontologo.getMatricula() == null
                     || odontologo.getNombre().trim().isEmpty() || odontologo.getApellido().trim().isEmpty() || odontologo.getMatricula().trim().isEmpty()) {
@@ -31,10 +31,8 @@ public class OdontologoService implements IOdontologoService {
             return odontologoRepository.save(odontologo);
         } else {
             // La matrícula ya existe en la base de datos
-
             throw new Exception("La matrícula del odontólogo ya existe");
         }
-
     }
 
     @Override
@@ -48,8 +46,21 @@ public class OdontologoService implements IOdontologoService {
     }
 
     @Override
-    public void actualizar(Odontologo odontologo) {
-        odontologoRepository.save(odontologo);
+    public void actualizar(Odontologo odontologo) throws Exception {
+        Optional<Odontologo> odontologoOptional = odontologoRepository.findByMatricula(odontologo.getMatricula());
+        if (odontologoOptional.isPresent() && odontologo.getId().equals(odontologoOptional.get().getId())) {
+            // La matrícula no existe, verificar campos vacíos y guardar el odontólogo
+            if (odontologo.getNombre() == null || odontologo.getApellido() == null || odontologo.getMatricula() == null
+                    || odontologo.getNombre().trim().isEmpty() || odontologo.getApellido().trim().isEmpty() || odontologo.getMatricula().trim().isEmpty()) {
+                throw new Exception("No puedes poner campos vacíos");
+            }
+            odontologoRepository.save(odontologo);
+        } else {
+            // La matrícula ya existe en la base de datos
+
+            throw new Exception("La matrícula del odontólogo ya existe");
+        }
+
     }
 
     @Override
@@ -69,7 +80,7 @@ public class OdontologoService implements IOdontologoService {
 
 
     @Override
-    public Optional<List<Odontologo>> findByMatricula(String matricula) {
+    public Optional<Odontologo> findByMatricula(String matricula) {
         return odontologoRepository.findByMatricula(matricula);
     }
 

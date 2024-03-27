@@ -1,6 +1,7 @@
 package com.dh.ClinicMVC.service.implementation;
 
 
+import com.dh.ClinicMVC.entity.Odontologo;
 import com.dh.ClinicMVC.entity.Paciente;
 import com.dh.ClinicMVC.repository.IPacienteRepository;
 import com.dh.ClinicMVC.service.IPacienteService;
@@ -19,8 +20,19 @@ public class PacienteService implements IPacienteService {
     }
 
     @Override
-    public Paciente guardar(Paciente paciente) {
-       return pacienteRepository.save(paciente);
+    public Paciente guardar(Paciente paciente) throws Exception {
+        Optional<Odontologo> odontologoBDList = pacienteRepository.findByDni(paciente.getDni());
+        if (odontologoBDList.isEmpty()) {
+            // si el dni no existe, verifica campos vacíos y guardar el odontólogo
+            if (paciente.getNombre() == null || paciente.getApellido() == null || paciente.getDni() == null
+                    || paciente.getNombre().trim().isEmpty() || paciente.getApellido().trim().isEmpty() || paciente.getDni().trim().isEmpty()) {
+                throw new Exception("No puedes poner campos vacíos");
+            }
+            return pacienteRepository.save(paciente);
+        } else {
+            // La matrícula ya existe en la base de datos
+            throw new Exception("El Dni del paciente ya existe");
+        }
     }
 
     @Override
@@ -29,22 +41,34 @@ public class PacienteService implements IPacienteService {
     }
 
     @Override
-    public Paciente buscarPorId(Long id) {
-        Optional<Paciente> pacienteOptional = pacienteRepository.findById(id);
-        if (pacienteOptional.isPresent())
-            return pacienteOptional.get();
-        else {
-            return null;
-        }
+    public Optional<Paciente> buscarPorId(Long id) {
+       return pacienteRepository.findById(id);
     }
 
     @Override
-    public void actualizar(Paciente paciente) {
-        pacienteRepository.save(paciente);
+    public void actualizar(Paciente paciente) throws Exception {
+        Optional<Odontologo> odontologoBDList = pacienteRepository.findByDni(paciente.getDni());
+        if (odontologoBDList.isEmpty()) {
+            // si el dni no existe, verifica campos vacíos y guardar el odontólogo
+            if (paciente.getNombre() == null || paciente.getApellido() == null || paciente.getDni() == null
+                    || paciente.getNombre().trim().isEmpty() || paciente.getApellido().trim().isEmpty() || paciente.getDni().trim().isEmpty()) {
+                throw new Exception("No puedes poner campos vacíos");
+            }
+                pacienteRepository.save(paciente);
+        } else {
+            // La matrícula ya existe en la base de datos
+
+            throw new Exception("El dni del paciente ya existe");
+        }
     }
 
     @Override
     public void eliminar(Long id) {
     pacienteRepository.deleteById(id);
+    }
+
+    @Override
+    public Optional<Odontologo> findByDni(String dni) {
+        return pacienteRepository.findByDni(dni);
     }
 }

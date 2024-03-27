@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/pacientes")
@@ -18,7 +19,7 @@ public class PacienteController {
     }
 
     @PostMapping
-    public ResponseEntity<Paciente> guardar(@RequestBody Paciente paciente) {
+    public ResponseEntity<Paciente> guardar(@RequestBody Paciente paciente) throws Exception {
         Paciente nuevoPaciente = pacienteService.guardar(paciente);
         return ResponseEntity.status(HttpStatus.CREATED).body(nuevoPaciente);
     }
@@ -35,15 +36,15 @@ public class PacienteController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Paciente> buscarPorId(@PathVariable Long id) {
-        Paciente paciente = pacienteService.buscarPorId(id);
-        return paciente != null ? ResponseEntity.ok(paciente) : ResponseEntity.notFound().build();
+        Optional<Paciente> pacienteOptional = pacienteService.buscarPorId(id);
+        return pacienteOptional.isPresent() ? ResponseEntity.ok(pacienteOptional.get()) : ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id) {
         ResponseEntity<String> response;
-        Paciente pacienteBuscado = pacienteService.buscarPorId(id);
-        if (pacienteBuscado != null) {
+        Optional<Paciente> pacienteOptional = pacienteService.buscarPorId(id);
+        if (pacienteOptional.isPresent()) {
             pacienteService.eliminar(id);
             response = ResponseEntity.ok("Se eliminó el paciente con id " + id);
         } else {
@@ -52,14 +53,13 @@ public class PacienteController {
         return response;
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<String> actualizar(@PathVariable Long id, @RequestBody Paciente paciente) {
-        ResponseEntity<String> response;
-        Paciente pacienteBuscado = pacienteService.buscarPorId(id);
-        if (pacienteBuscado != null) {
-            paciente.setId(id);
+    @PutMapping()
+    public ResponseEntity<Paciente> actualizar(@RequestBody Paciente paciente) throws Exception {
+        ResponseEntity<Paciente> response;
+        Optional<Paciente> pacienteOptional = pacienteService.buscarPorId(paciente.getId());
+        if (pacienteOptional.isPresent()) {
             pacienteService.actualizar(paciente);
-            response = ResponseEntity.ok("Se actualizó el paciente con id " + id);
+            response = new ResponseEntity(paciente, HttpStatus.OK);
         } else {
             response = ResponseEntity.notFound().build();
         }

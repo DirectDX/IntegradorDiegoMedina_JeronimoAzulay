@@ -23,7 +23,6 @@ public class Paciente {
     private Long id;
     private String nombre;
     private String apellido;
-    @Column(unique = true, nullable = false)
     private String dni;
     private LocalDate fechaIngreso;
     @OneToOne(cascade = CascadeType.ALL,fetch = FetchType.EAGER)

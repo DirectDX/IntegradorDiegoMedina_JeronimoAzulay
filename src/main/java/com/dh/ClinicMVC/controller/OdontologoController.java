@@ -44,10 +44,10 @@ public class OdontologoController {
 
 
     @PutMapping
-    public ResponseEntity<Odontologo> actualizar(@RequestBody Odontologo odontologo) {
+    public ResponseEntity<Odontologo> actualizar(@RequestBody Odontologo odontologo) throws Exception {
         ResponseEntity<Odontologo> response;
         Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(odontologo.getId());
-        if (odontologoBuscado != null) {
+        if (odontologoBuscado.isPresent()) {
             odontologoService.actualizar(odontologo);
             response = new ResponseEntity(odontologo, HttpStatus.OK);
         } else {
@@ -65,7 +65,7 @@ public class OdontologoController {
     public ResponseEntity<String> eliminar(@PathVariable("id") Long id) {
         ResponseEntity<String> response;
         Optional<Odontologo> odontologoBuscado = odontologoService.buscarPorId(id);
-        if (odontologoBuscado != null) {
+        if (odontologoBuscado.isPresent()) {
             odontologoService.eliminar(id);
             response = ResponseEntity.ok("Se elimino el odontologo con id " + id);
         }
@@ -76,10 +76,10 @@ public class OdontologoController {
     }
 
     @GetMapping("/matricula/{matricula}")
-    public  ResponseEntity<List<Odontologo>> buscarPorMatricula(@PathVariable("matricula") String matricula) {
-        Optional<List<Odontologo>> listaBuscados = odontologoService.findByMatricula(matricula);
-        if (!listaBuscados.isEmpty()) {
-            return ResponseEntity.ok(listaBuscados.get());
+    public  ResponseEntity<Odontologo> buscarPorMatricula(@PathVariable("matricula") String matricula) {
+        Optional<Odontologo> odontologoOptional = odontologoService.findByMatricula(matricula);
+        if (odontologoOptional.isPresent()) {
+            return ResponseEntity.ok(odontologoOptional.get());
         } else {
             return ResponseEntity.notFound().build();
         }
