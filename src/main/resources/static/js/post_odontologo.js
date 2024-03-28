@@ -63,14 +63,14 @@ window.addEventListener('load', function () {
         document.querySelector('#add_nombre').value = "";
         document.querySelector('#add_apellido').value = "";
         document.querySelector('#add_matricula').value = "";
-        window.location.reload();
+        getDentists();
     }
 
     (function(){
         let pathname = window.location.pathname;
         if(pathname === "/"){
             document.querySelector(".nav .nav-item a:first").classList.add("active");
-        } else if (pathname == "/odontologoLista.html") {
+        } else if (pathname == "/odontologos.html") {
             document.querySelector(".nav .nav-item a:last").classList.add("active");
         }
     })();

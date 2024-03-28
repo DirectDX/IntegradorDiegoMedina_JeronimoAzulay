@@ -102,6 +102,15 @@ function populatePatientTable(patients) {
     
             tableBody.appendChild(row);
         });
+
+                // Event listener para manejar los clicks en los botones de actualización
+                document.querySelectorAll('.update-btn').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        const patientId = this.dataset.id;
+                        // Llamar a la función para abrir el modal de actualización con los datos del odontólogo seleccionado
+                        openUpdateModal(patientId);
+                    });
+                });
     }
     
     // Function to open the update modal with the selected patient's data

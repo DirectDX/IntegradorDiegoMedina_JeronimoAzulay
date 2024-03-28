@@ -1,27 +1,22 @@
 window.addEventListener('load', function () {
-    // Al cargar la página, buscamos y obtenemos el formulario donde estarán
-    // los datos que el usuario cargará del nuevo paciente
-    const formulario = document.querySelector('#add_new_patient');
 
-    // Ante un submit del formulario se ejecutará la siguiente función
+    //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
+    //los datos que el usuario cargará del nuevo odontólogo
+    const formulario = document.querySelector('#add_new_dentist');
+
+    //Ante un submit del formulario se ejecutará la siguiente funcion
     formulario.addEventListener('submit', function (event) {
-        // Creamos un JSON que tendrá los datos del nuevo paciente
+
+       //creamos un JSON que tendrá los datos del nuevo odontólogo
         const formData = {
             nombre: document.querySelector('#add_nombre').value,
             apellido: document.querySelector('#add_apellido').value,
-            dni: document.querySelector('#add_dni').value,
-            fechaIngreso: document.querySelector('#add_fechaIngreso').value,
-            domicilio: {
-                calle: document.querySelector('#add_calle').value,
-                numero: parseInt(document.querySelector('#add_numero').value),
-                localidad: document.querySelector('#add_localidad').value,
-                provincia: document.querySelector('#add_provincia').value
-            }
+            matricula: document.querySelector('#add_matricula').value
         };
 
-        // Invocamos utilizando la función fetch la API pacientes con el método POST que guardará
-        // el paciente que enviaremos en formato JSON
-        const url = '/pacientes';
+        //invocamos utilizando la función fetch la API odontólogos con el método POST que guardará
+        //el odontólogo que enviaremos en formato JSON
+        const url = '/odontologos';
         const settings = {
             method: 'POST',
             headers: {
@@ -33,55 +28,50 @@ window.addEventListener('load', function () {
         fetch(url, settings)
             .then(response => response.json())
             .then(data => {
-                // Si no hay ningún error se muestra un mensaje diciendo que el paciente
-                // se agregó correctamente
-                let successAlert = '<div class="alert alert-success alert-dismissible">' +
-                    '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                    '<strong>Paciente agregado:</strong> El paciente ha sido agregado correctamente. </div>';
+                 //Si no hay ningun error se muestra un mensaje diciendo que el odontólogo
+                 //se agrego bien
+                 let successAlert = '<div class="alert alert-success alert-dismissible">' +
+                     '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                     '<strong>Odontólogo agregado:</strong> El odontólogo ha sido agregado correctamente.</div>';
 
-                document.querySelector('#response').innerHTML = successAlert;
-                document.querySelector('#response').style.display = "block";
-                resetUploadForm();
+                 document.querySelector('#add_response').innerHTML = successAlert;
+                 document.querySelector('#add_response').style.display = "block";
+                 resetUploadForm();
+                 
+
             })
             .catch(error => {
-                // Si hay algún error se muestra un mensaje diciendo que el paciente
-                // no se pudo guardar y se intente nuevamente
-                let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
-                    '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                    '<strong>Error:</strong> Hubo un problema al agregar el paciente. Intente nuevamente. </div>';
+                    //Si hay algun error se muestra un mensaje diciendo que el odontólogo
+                    //no se pudo guardar y se intente nuevamente
+                    let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
+                                     '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                                     '<strong>Error:</strong> Hubo un problema al agregar el odontólogo. Intente nuevamente.</div>';
 
-                document.querySelector('#response').innerHTML = errorAlert;
-                document.querySelector('#response').style.display = "block";
-                // Se dejan todos los campos vacíos por si se quiere ingresar otro paciente
-                resetUploadForm();
+                      document.querySelector('#add_response').innerHTML = errorAlert;
+                      document.querySelector('#add_response').style.display = "block";
+                     //se dejan todos los campos vacíos por si se quiere ingresar otro odontólogo
+                     resetUploadForm();
             });
 
         // Prevenir el comportamiento por defecto del formulario
         event.preventDefault();
+        
     });
 
-    function resetUploadForm() {
+
+    function resetUploadForm(){
         document.querySelector('#add_nombre').value = "";
         document.querySelector('#add_apellido').value = "";
-        document.querySelector('#add_dni').value = "";
-        document.querySelector('#add_fechaIngreso').value = "";
-        document.querySelector('#add_calle').value = "";
-        document.querySelector('#add_numero').value = "";
-        document.querySelector('#add_localidad').value = "";
-        document.querySelector('#add_provincia').value = "";
-        setTimeout(() => {
-            window.location.reload();
-          }, 3000);
-        
+        document.querySelector('#add_matricula').value = "";
+        window.location.reload();
     }
 
-    // Agregar la clase "active" al enlace correspondiente en la barra de navegación
-    (function () {
+    (function(){
         let pathname = window.location.pathname;
-        if (pathname === "/") {
+        if(pathname === "/"){
             document.querySelector(".nav .nav-item a:first").classList.add("active");
-        } else if (pathname === "/pacientes.html") {
+        } else if (pathname == "/odontologoLista.html") {
             document.querySelector(".nav .nav-item a:last").classList.add("active");
-        }
-    })();
+        }
+    })();
 });
