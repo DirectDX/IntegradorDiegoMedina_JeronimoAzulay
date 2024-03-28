@@ -2,6 +2,7 @@ package com.dh.ClinicMVC.service.implementation;
 
 
 import com.dh.ClinicMVC.entity.Odontologo;
+import com.dh.ClinicMVC.exception.BadRequest;
 import com.dh.ClinicMVC.repository.IOdontologoRepository;
 import com.dh.ClinicMVC.service.IOdontologoService;
 
@@ -20,18 +21,18 @@ public class OdontologoService implements IOdontologoService {
         this.odontologoRepository = odontologoRepository;
     }
     @Override
-    public Odontologo guardar(Odontologo odontologo) throws Exception {
+    public Odontologo guardar(Odontologo odontologo) throws BadRequest {
         Optional<Odontologo> odontologoOptional = odontologoRepository.findByMatricula(odontologo.getMatricula());
         if (odontologoOptional.isEmpty()) {
             // La matrícula no existe, verificar campos vacíos y guardar el odontólogo
             if (odontologo.getNombre() == null || odontologo.getApellido() == null || odontologo.getMatricula() == null
                     || odontologo.getNombre().trim().isEmpty() || odontologo.getApellido().trim().isEmpty() || odontologo.getMatricula().trim().isEmpty()) {
-                throw new Exception("No puedes poner campos vacíos");
+                throw new BadRequest("No puedes poner campos vacíos");
             }
             return odontologoRepository.save(odontologo);
         } else {
             // La matrícula ya existe en la base de datos
-            throw new Exception("La matrícula del odontólogo ya existe");
+            throw new BadRequest("La matrícula del odontólogo ya existe");
         }
     }
 
@@ -46,19 +47,19 @@ public class OdontologoService implements IOdontologoService {
     }
 
     @Override
-    public void actualizar(Odontologo odontologo) throws Exception {
+    public void actualizar(Odontologo odontologo) throws BadRequest {
         Optional<Odontologo> odontologoOptional = odontologoRepository.findByMatricula(odontologo.getMatricula());
         if (odontologoOptional.isPresent() && odontologo.getId().equals(odontologoOptional.get().getId())) {
             // La matrícula no existe, verificar campos vacíos y guardar el odontólogo
             if (odontologo.getNombre() == null || odontologo.getApellido() == null || odontologo.getMatricula() == null
                     || odontologo.getNombre().trim().isEmpty() || odontologo.getApellido().trim().isEmpty() || odontologo.getMatricula().trim().isEmpty()) {
-                throw new Exception("No puedes poner campos vacíos");
+                throw new BadRequest("No puedes poner campos vacíos");
             }
             odontologoRepository.save(odontologo);
         } else {
             // La matrícula ya existe en la base de datos
 
-            throw new Exception("La matrícula del odontólogo ya existe");
+            throw new BadRequest("La matrícula del odontólogo ya existe");
         }
 
     }

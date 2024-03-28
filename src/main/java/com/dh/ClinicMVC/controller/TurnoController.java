@@ -58,16 +58,19 @@ public class TurnoController {
         return response;
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Turno> buscarPorId(@PathVariable Long id) {
-        Turno turno = turnoService.buscarPorId(id);
-        return turno != null ? ResponseEntity.ok(turno) : ResponseEntity.notFound().build();
+    public ResponseEntity<TurnoResponseDTO> buscarPorId(@PathVariable Long id) {
+        Optional<TurnoResponseDTO> turnoResponseDTOOptional = turnoService.buscarPorId(id);
+        if (turnoResponseDTOOptional.isPresent()){
+            return ResponseEntity.ok(turnoResponseDTOOptional.get());
+        }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<String> eliminar(@PathVariable Long id) {
         ResponseEntity<String> response;
-        Turno turnoBuscado = turnoService.buscarPorId(id);
-        if (turnoBuscado != null) {
+        Optional<TurnoResponseDTO> turnoBuscado = turnoService.buscarPorId(id);
+        if (turnoBuscado.isPresent()) {
             pacienteService.eliminar(id);
             response = ResponseEntity.ok("Se eliminó el turno con id " + id);
         } else {
@@ -76,8 +79,8 @@ public class TurnoController {
         return response;
     }
     @GetMapping
-    public ResponseEntity<List<Turno>> listarTodos() {
-        List<Turno> listaTurnos = turnoService.listarTodos();
+    public ResponseEntity<List<TurnoResponseDTO>> listarTodos() {
+        List<TurnoResponseDTO> listaTurnos = turnoService.listarTodos();
         if (!listaTurnos.isEmpty()) {
             return ResponseEntity.ok(listaTurnos);
         } else {
@@ -85,19 +88,21 @@ public class TurnoController {
         }
     }
     @GetMapping("/paciente/{id}")
-    public ResponseEntity<List<Turno>> buscarPorPacienteId(@RequestParam Long id) {
-        Optional<List<Turno>> turnosEncontrados = turnoService.findByPacienteId(id);
-        if (!turnosEncontrados.isEmpty()) {
-            return ResponseEntity.ok(turnosEncontrados.get());
+    public ResponseEntity<List<TurnoResponseDTO>> buscarPorPacienteId(@RequestParam Long id) {
+        Optional<List<TurnoResponseDTO>> optionalTurnoResponseDTOList = turnoService.findByPacienteId(id);
+        if (optionalTurnoResponseDTOList.isPresent()) {
+            List<TurnoResponseDTO> turnoResponseDTOList = optionalTurnoResponseDTOList.get();
+            return ResponseEntity.ok(turnoResponseDTOList);
         } else {
             return ResponseEntity.notFound().build();
         }
     }
     @GetMapping("/odontolgo/{id}")
-    public ResponseEntity<List<Turno>> buscarPorOdontologoId(@RequestParam Long id) {
-        Optional<List<Turno>> turnosEncontrados = turnoService.findByOdontologoId(id);
-        if (!turnosEncontrados.isEmpty()) {
-            return ResponseEntity.ok(turnosEncontrados.get());
+    public ResponseEntity<List<TurnoResponseDTO>> buscarPorOdontologoId(@RequestParam Long id) {
+        Optional<List<TurnoResponseDTO>> optionalTurnoResponseDTOList = turnoService.findByPacienteId(id);
+        if (optionalTurnoResponseDTOList.isPresent()) {
+            List<TurnoResponseDTO> turnoResponseDTOList = optionalTurnoResponseDTOList.get();
+            return ResponseEntity.ok(turnoResponseDTOList);
         } else {
             return ResponseEntity.notFound().build();
         }

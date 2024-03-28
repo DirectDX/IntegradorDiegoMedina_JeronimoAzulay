@@ -3,6 +3,7 @@ package com.dh.ClinicMVC.service.implementation;
 
 import com.dh.ClinicMVC.entity.Odontologo;
 import com.dh.ClinicMVC.entity.Paciente;
+import com.dh.ClinicMVC.exception.BadRequest;
 import com.dh.ClinicMVC.repository.IPacienteRepository;
 import com.dh.ClinicMVC.service.IPacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,18 +21,18 @@ public class PacienteService implements IPacienteService {
     }
 
     @Override
-    public Paciente guardar(Paciente paciente) throws Exception {
+    public Paciente guardar(Paciente paciente) throws BadRequest {
         Optional<Odontologo> odontologoBDList = pacienteRepository.findByDni(paciente.getDni());
         if (odontologoBDList.isEmpty()) {
             // si el dni no existe, verifica campos vacíos y guardar el odontólogo
             if (paciente.getNombre() == null || paciente.getApellido() == null || paciente.getDni() == null
                     || paciente.getNombre().trim().isEmpty() || paciente.getApellido().trim().isEmpty() || paciente.getDni().trim().isEmpty()) {
-                throw new Exception("No puedes poner campos vacíos");
+                throw new BadRequest("No puedes poner campos vacíos");
             }
             return pacienteRepository.save(paciente);
         } else {
             // La matrícula ya existe en la base de datos
-            throw new Exception("El Dni del paciente ya existe");
+            throw new BadRequest("El Dni del paciente ya existe");
         }
     }
 
@@ -46,19 +47,19 @@ public class PacienteService implements IPacienteService {
     }
 
     @Override
-    public void actualizar(Paciente paciente) throws Exception {
+    public void actualizar(Paciente paciente) throws BadRequest {
         Optional<Odontologo> odontologoBDList = pacienteRepository.findByDni(paciente.getDni());
         if (odontologoBDList.isEmpty()) {
             // si el dni no existe, verifica campos vacíos y guardar el odontólogo
             if (paciente.getNombre() == null || paciente.getApellido() == null || paciente.getDni() == null
                     || paciente.getNombre().trim().isEmpty() || paciente.getApellido().trim().isEmpty() || paciente.getDni().trim().isEmpty()) {
-                throw new Exception("No puedes poner campos vacíos");
+                throw new BadRequest("No puedes poner campos vacíos");
             }
                 pacienteRepository.save(paciente);
         } else {
             // La matrícula ya existe en la base de datos
 
-            throw new Exception("El dni del paciente ya existe");
+            throw new BadRequest("El dni del paciente ya existe");
         }
     }
 
