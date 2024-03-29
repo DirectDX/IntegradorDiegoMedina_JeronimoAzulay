@@ -26,32 +26,36 @@ window.addEventListener('load', function () {
         };
 
         fetch(url, settings)
-            .then(response => response.json())
-            .then(data => {
-                 //Si no hay ningun error se muestra un mensaje diciendo que el odontólogo
-                 //se agrego bien
-                 let successAlert = '<div class="alert alert-success alert-dismissible">' +
-                     '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                     '<strong>Odontólogo agregado:</strong> El odontólogo ha sido agregado correctamente.</div>';
-
-                 document.querySelector('#add_response').innerHTML = successAlert;
-                 document.querySelector('#add_response').style.display = "block";
-                 resetUploadForm();
-                 
-
-            })
-            .catch(error => {
-                    //Si hay algun error se muestra un mensaje diciendo que el odontólogo
-                    //no se pudo guardar y se intente nuevamente
-                    let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
-                                     '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                                     '<strong>Error:</strong> Hubo un problema al agregar el odontólogo. Intente nuevamente.</div>';
-
-                      document.querySelector('#add_response').innerHTML = errorAlert;
-                      document.querySelector('#add_response').style.display = "block";
-                     //se dejan todos los campos vacíos por si se quiere ingresar otro odontólogo
-                     resetUploadForm();
-            });
+        .then(response => {
+            if (!response.ok) {
+                // Si la respuesta indica un error, lanzar una excepción
+                throw new Error(`Error: Hubo un problema en el servidor. Código de estado: ${response.status}`);
+            }
+            // Si la respuesta es exitosa, convertir la respuesta a JSON
+            return response.json();
+        })
+        .then(data => {
+            // Manejar los datos obtenidos si la respuesta fue exitosa
+            let successAlert = '<div class="alert alert-success alert-dismissible">' +
+                               '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                               '<strong>Odontólogo agregado:</strong> El odontólogo ha sido agregado correctamente.</div>';
+    
+            document.querySelector('#add_response').innerHTML = successAlert;
+            document.querySelector('#add_response').style.display = "block";
+            resetUploadForm();
+        })
+        .catch(error => {
+            // Manejar errores generados por fetch o por la lógica anterior
+            let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
+                             '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
+                             `<strong>Error:</strong> ${error.message}</div>`;
+    
+            document.querySelector('#add_response').innerHTML = errorAlert;
+            document.querySelector('#add_response').style.display = "block";
+            resetUploadForm();
+            getDentists();
+        });
+    
 
         // Prevenir el comportamiento por defecto del formulario
         event.preventDefault();
@@ -63,7 +67,7 @@ window.addEventListener('load', function () {
         document.querySelector('#add_nombre').value = "";
         document.querySelector('#add_apellido').value = "";
         document.querySelector('#add_matricula').value = "";
-        getDentists();
+
     }
 
     (function(){

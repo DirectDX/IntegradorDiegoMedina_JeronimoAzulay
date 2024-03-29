@@ -20,4 +20,5 @@ public class ClinicMvcApplication {
 	//paciente{}
 	//odontologo{}
 
+
 }

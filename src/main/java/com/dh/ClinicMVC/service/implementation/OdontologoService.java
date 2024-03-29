@@ -23,14 +23,15 @@ public class OdontologoService implements IOdontologoService {
     public Odontologo guardar(Odontologo odontologo) throws Exception {
         Optional<Odontologo> odontologoOptional = odontologoRepository.findByMatricula(odontologo.getMatricula());
         if (odontologoOptional.isEmpty()) {
-            // La matrícula no existe, verificar campos vacíos y guardar el odontólogo
+            // Validar que los campos no estén vacíos
             if (odontologo.getNombre() == null || odontologo.getApellido() == null || odontologo.getMatricula() == null
                     || odontologo.getNombre().trim().isEmpty() || odontologo.getApellido().trim().isEmpty() || odontologo.getMatricula().trim().isEmpty()) {
-                throw new Exception("No puedes poner campos vacíos");
+                throw new IllegalArgumentException("No puedes dejar campos vacíos");
             }
+            // Guardar el odontólogo si la matrícula no existe en la base de datos
             return odontologoRepository.save(odontologo);
         } else {
-            // La matrícula ya existe en la base de datos
+            // Lanzar una excepción si la matrícula ya existe en la base de datos
             throw new Exception("La matrícula del odontólogo ya existe");
         }
     }
@@ -58,10 +59,8 @@ public class OdontologoService implements IOdontologoService {
         } else {
             // La matrícula ya existe en la base de datos
 
-            throw new Exception("La matrícula del odontólogo ya existe");
-        }
-
-    }
+            throw new Exception("La matrícula del odontólogo ya existe");}
+}
 
     @Override
     public void eliminar(Long id) {

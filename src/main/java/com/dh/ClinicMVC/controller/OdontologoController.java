@@ -35,12 +35,9 @@ public class OdontologoController {
     @GetMapping()
     public ResponseEntity<List<Odontologo>> listarTodos() {
         List<Odontologo> listaBuscados = odontologoService.listarTodos();
-        if (!listaBuscados.isEmpty()) {
-            return ResponseEntity.ok(listaBuscados);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        return ResponseEntity.ok(listaBuscados);
     }
+
 
 
     @PutMapping
