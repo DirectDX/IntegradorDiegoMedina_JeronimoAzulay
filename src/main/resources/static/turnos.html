@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>DH Clínica Dental</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/muela.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script text="text/javascript" src="/js/get_turno.js"></script>
+    <script text="text/javascript" src="/js/get_turno_odontologo.js"></script>
+    <script text="text/javascript" src="/js/get_turno_paciente.js"></script>
+    <script text="text/javascript" src="/js/post_turno.js"></script>
+    <script text="text/javascript" src="/js/delete_turno.js"></script>
+
+
+</head>
+
+<style>
+  th{
+      text-align: center;
+      color: #188291;
+  }
+
+  #formAgregarTurno {
+    margin-bottom: 20px;
+  }
+</style>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+    <a class="navbar-brand" href="/index.html">
+        <img src="./assets/logo.png" alt="logo diente">
+        <span id="title">Clínica Odontológica</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <div class="navbar-nav">
+        <a class="nav-link" aria-current="page" href="./index.html">INICIO</a>
+        <a class="nav-link active" href="./turnos.html">TURNOS</a>
+        <a class="nav-link" href="./odontologos.html">ODONTOLOGOS</a>
+        <a class="nav-link " href="./pacientes.html">PACIENTES</a>
+    </div>
+</nav>
+<main>
+
+  <div class="container-fluid">
+        
+    <h1 style="text-align: center;">Gestión de Turnos</h1>
+    <div class="row d-flex">
+        <div class="col-md-3 d-flex justify-content-center align-items-center" style="width: 100%;">
+        <img src="./assets/calendario.png" alt="icono calendario">
+
+        </div>
+        <div class="col-md-9 d-flex justify-content-center align-items-center">
+          <form id="formAgregarTurno" style="min-width: 50%;">
+            <div class="form-group">
+              <label for="odontologo_selector">Odontólogo:</label>
+              <select class="form-control" id="odontologo_selector" required>
+                <option value="" selected disabled>Seleccionar odontólogo</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="paciente_selector">Paciente:</label>
+              <select class="form-control" id="paciente_selector" required>
+                <option value="" selected disabled>Seleccionar paciente</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="fechaHora">Fecha y Hora:</label>
+              <input type="datetime-local" class="form-control" id="fechaHora" required>
+            </div>
+    
+    
+            <button type="submit" class="btn btn-danger"
+                    id="btn-add-new-turn">Agendar</button>
+          </form>
+        </div>
+  </div>
+
+  <!-- Modal Turno add -->
+  <div class="modal fade" id="agregarTurnoModal" tabindex="-1" aria-labelledby="agregarTurnoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Turno</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                      <form id="formAgregarTurno">
+                        <div class="form-group">
+                          <label for="odontologo_selector">Odontólogo:</label>
+                          <select class="form-control" id="odontologo_selector" required>
+                            <option value="" selected disabled>Seleccionar odontólogo</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="paciente_selector">Paciente:</label>
+                          <select class="form-control" id="paciente_selector" required>
+                            <option value="" selected disabled>Seleccionar paciente</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="fechaHora">Fecha y Hora:</label>
+                          <input type="datetime-local" class="form-control" id="fechaHora" required>
+                        </div>
+                
+                
+                        <button type="submit" class="btn btn-danger"
+                                id="btn-add-new-dentist">Guardar</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                      </form>
+                      <div id="add_response" style="display:none; margin-top:10px">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+    <div id="div_patient_table">
+      <div class="row col-md-12 table-responsive">
+          <table id="patientTable" class="table table-striped">
+              <thead>
+              <tr>
+                <th colspan="3" style="text-align: center; background-color: azure; color: #188291;">Turno</th>
+                <th colspan="3" style="text-align: center; background-color: #188291; color: azure;">Odontologo</th>
+                <th colspan="3" style="text-align: center; background-color: azure; color: #188291;">Paciente</th>
+                <th colspan="1" style="text-align: center; background-color: #188291; color: azure;">Acciones</th>
+              </tr>
+              <tr>
+                  <th>Id</th>
+                  <th>Fecha</th>
+                  <th>Hora</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Matricula</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>DNI</th>
+                  <th>Eliminar</th>
+
+
+              </tr>
+              </thead>
+              <tbody id="patientTableBody">
+
+              </tbody>
+          </table>
+      </div>
+    </div>
+
+</main>
+
+</body>
+
+</html>
