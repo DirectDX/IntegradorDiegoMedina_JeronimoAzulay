@@ -63,8 +63,8 @@ public class PacienteService implements IPacienteService {
     @Override
     public void actualizar(Paciente paciente) throws BadRequest {
         LOGGER.info("actualizando el paciente con id: " + paciente.getId());
-        Optional<Paciente> odontologoBDList = pacienteRepository.findByDni(paciente.getDni());
-        if (odontologoBDList.isEmpty()) {
+        Optional<Paciente> pacienteOptional = pacienteRepository.findByDni(paciente.getDni());
+        if (pacienteOptional.isPresent() ) {
             // si el dni no existe, verifica campos vacíos y guardar el odontólogo
             if (paciente.getNombre() == null || paciente.getApellido() == null || paciente.getDni() == null
                     || paciente.getNombre().trim().isEmpty() || paciente.getApellido().trim().isEmpty() || paciente.getDni().trim().isEmpty()) {
