@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const closeButtonElements = document.querySelectorAll(".cerrarActualizar");
+
+    // Agregar un event listener a cada elemento
+    closeButtonElements.forEach((element) => {
+        element.addEventListener("click", function () {
+          // Recargar la página
+          console.log("click en close");
+          window.location.reload();
+        });
+      });
+
     const formulario = document.querySelector('#update_patient_form');
 
     // Event listener for the form submission
@@ -12,10 +23,13 @@ document.addEventListener('DOMContentLoaded', function () {
             apellido: document.querySelector('#put_apellido').value,
             dni: document.querySelector('#put_dni').value,
             fechaIngreso: document.querySelector('#put_fechaIngreso').value,
-            calle: document.querySelector('#put_calle').value,
-            numero: document.querySelector('#put_numero').value,
-            localidad: document.querySelector('#put_localidad').value,
-            provincia: document.querySelector('#put_provincia').value
+            domicilio: {
+                id: parseInt(document.querySelector('#put_patient_id').value),
+                calle: document.querySelector('#put_calle').value,
+                numero: parseInt(document.querySelector('#put_numero').value),
+                localidad: document.querySelector('#put_localidad').value,
+                provincia: document.querySelector('#put_provincia').value
+            }
         };
 
         // Call the PUT endpoint to update the patient data

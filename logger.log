@@ -1,286 +1,177 @@
-[2024-03-15 16:32:29] [ INFO ] [BD:58] se creo la tabla odontologos
-[2024-03-15 16:32:29] [ INFO ] [BD:62] se insertó un valor en la tabla  odontologos
-[2024-03-19 22:30:05] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@58ef95e4
-[2024-03-19 22:32:44] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@1c1560ed
-[2024-03-19 22:33:06] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@baac23c
-[2024-03-21 21:23:13] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@1d509d07
-[2024-03-21 21:24:11] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@2138afc4
-[2024-03-21 21:31:39] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@2b367524
-[2024-03-21 21:31:55] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@baac23c
-[2024-03-21 21:32:05] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@1a3df2e5
-[2024-03-21 21:32:06] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@4a44c9a7
-[2024-03-21 21:33:02] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@c41c562
-[2024-03-21 21:33:03] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@2383cbf
-[2024-03-21 21:33:04] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@57e4d4fb
-[2024-03-21 21:40:05] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@2c0fea59
-[2024-03-21 21:40:52] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@64cc9df6
-[2024-03-21 21:42:01] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@3a3cccc8
-[2024-03-21 21:42:46] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@12a703af
-[2024-03-21 21:42:55] [ INFO ] [TurnoController:42] esto trae el turno: com.dh.ClinicMVC.entity.Turno@33c34ac0
-[2024-03-22 22:12:19] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@6b12a3a
-[2024-03-22 22:14:34] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@2eeb5f3d
-[2024-03-22 22:15:18] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@27a2ef3b
-[2024-03-22 22:15:32] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@7d2cb028
-[2024-03-22 22:15:34] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@5df188d2
-[2024-03-22 22:15:38] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@3701a87c
-[2024-03-24 13:17:43] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@37571dd9
-[2024-03-24 13:17:46] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@49a4e8be
-[2024-03-24 13:18:17] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@6c334a9a
-[2024-03-24 13:18:44] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@2748da2f
-[2024-03-24 15:30:54] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@27a2ef3b
-[2024-03-24 15:31:03] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@103a93b1
-[2024-03-24 15:31:11] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@49a4e8be
-[2024-03-24 15:42:56] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@78adf687
-[2024-03-24 15:43:36] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@34542667
-[2024-03-24 15:43:44] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@238694d1
-[2024-03-24 15:44:33] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@5fc075fd
-[2024-03-24 15:47:55] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@120b6727
-[2024-03-24 15:48:07] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@23fc1cd
-[2024-03-24 15:48:59] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@3701a87c
-[2024-03-27 21:05:22] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@5d1802dd
-[2024-03-27 21:05:33] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@72ddb0cc
-[2024-03-27 21:06:19] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@1c5e798a
-[2024-03-27 21:12:23] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@6ee93dcb
-[2024-03-27 21:14:37] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@4f1f7a8b
-[2024-03-27 21:14:46] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@6d763903
-[2024-03-27 21:24:01] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@4d7f8400
-[2024-03-27 21:54:29] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@199fe0e2
-[2024-03-27 21:54:30] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@7796b633
-[2024-03-27 21:55:23] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@78e980b0
-[2024-03-27 21:56:28] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@3e2e0545
-[2024-03-27 21:58:50] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@134d322a
-[2024-03-27 21:59:19] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@1bd1a0cc
-[2024-03-27 21:59:27] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@70432b80
-[2024-03-27 22:39:53] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@6221a45e
-[2024-03-27 22:45:22] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@f3d23b1
-[2024-03-27 22:56:38] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@38565f06
-[2024-03-27 22:56:43] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@52defd84
-[2024-03-28 18:42:48] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@6db00cad
-[2024-03-28 18:42:48] [ INFO ] [TurnoService:37] Persitiendo un Turno
-[2024-03-28 18:42:48] [ INFO ] [TurnoService:155] Buscando los turnos con Odontologo id: 1
-[2024-03-28 18:43:09] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@72f97da5
-[2024-03-28 18:43:09] [ INFO ] [TurnoService:37] Persitiendo un Turno
-[2024-03-28 18:43:09] [ INFO ] [TurnoService:155] Buscando los turnos con Odontologo id: 1
-[2024-03-29 13:10:52] [ INFO ] [OdontologoServiceTest:47] []
-[2024-03-29 13:11:10] [ INFO ] [OdontologoServiceTest:47] 0
-[2024-03-29 13:12:14] [ INFO ] [OdontologoServiceTest:47] 0
-[2024-03-29 14:31:05] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 14:31:14] [ INFO ] [PacienteService:28] Persistiendo un Paciente
-[2024-03-29 14:31:14] [ INFO ] [PacienteService:36] Guardado exitosamente
-[2024-03-29 14:31:17] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 14:31:36] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
-[2024-03-29 14:31:36] [ INFO ] [PacienteService:85] Eliminando al paciente con id: 1
-[2024-03-29 14:31:36] [ INFO ] [PacienteService:88] Paciente eliminado exitosamente
-[2024-03-29 17:07:14] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:07:20] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 17:07:20] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 17:07:24] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:18:04] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:18:09] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 17:18:09] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 17:18:12] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:19:52] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:19:59] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 17:19:59] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 17:20:00] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:20:07] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 17:20:07] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 17:20:08] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:21:24] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:21:32] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 17:21:32] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 17:21:34] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:24:55] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 17:25:04] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 17:25:07] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 17:25:08] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 17:25:24] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:28:18] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:28:37] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:28:38] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:28:38] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:29:01] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:29:07] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 17:29:07] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 17:29:08] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:33:58] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:34:04] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 17:34:04] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 17:34:05] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:36:38] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:37:02] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:37:06] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 17:37:07] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 17:37:08] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:46:18] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:46:22] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 17:46:22] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 17:46:23] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:46:28] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 1
-[2024-03-29 17:46:28] [ INFO ] [OdontologoService:84] Eliminando al Odontólogo con id: 1
-[2024-03-29 17:46:28] [ INFO ] [OdontologoService:87] Odontólogo eliminado exitosamente
-[2024-03-29 17:46:33] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:46:39] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 17:46:39] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 17:46:39] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:46:58] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 2
-[2024-03-29 17:47:02] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 2
-[2024-03-29 17:47:02] [ INFO ] [OdontologoService:64] Actualizando el Odontólogo con id: 2
-[2024-03-29 17:47:02] [ INFO ] [OdontologoService:73] Actualizado exitosamente
-[2024-03-29 17:47:02] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:47:03] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 2
-[2024-03-29 17:47:07] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 2
-[2024-03-29 17:47:07] [ INFO ] [OdontologoService:64] Actualizando el Odontólogo con id: 2
-[2024-03-29 17:47:07] [ INFO ] [OdontologoService:73] Actualizado exitosamente
-[2024-03-29 17:47:07] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:47:12] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 2
-[2024-03-29 17:47:12] [ INFO ] [OdontologoService:84] Eliminando al Odontólogo con id: 2
-[2024-03-29 17:47:12] [ INFO ] [OdontologoService:87] Odontólogo eliminado exitosamente
-[2024-03-29 17:48:47] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 17:48:57] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:49:02] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 17:49:02] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 17:49:03] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:49:04] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 17:49:04] [ INFO ] [TurnoService:94] Buscando lista de turnos
-[2024-03-29 17:49:04] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 17:53:25] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 17:53:36] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 17:53:37] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 17:53:38] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 18:00:20] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 18:01:30] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:32] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:32] [ INFO ] [TurnoService:94] Buscando lista de turnos
-[2024-03-29 18:01:32] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 18:01:33] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:34] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 18:01:35] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:35] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:36] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 18:01:36] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:37] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 18:01:37] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:37] [ INFO ] [TurnoService:94] Buscando lista de turnos
-[2024-03-29 18:01:38] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:38] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 18:01:39] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:44] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:45] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 18:01:46] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:47] [ INFO ] [TurnoService:94] Buscando lista de turnos
-[2024-03-29 18:01:47] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:47] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 18:01:54] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:58] [ INFO ] [TurnoService:94] Buscando lista de turnos
-[2024-03-29 18:01:58] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 18:01:58] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:01:59] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:02:08] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:02:08] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:03:04] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 3
-[2024-03-29 18:03:04] [ INFO ] [OdontologoService:84] Eliminando al Odontólogo con id: 3
-[2024-03-29 18:03:04] [ INFO ] [OdontologoService:87] Odontólogo eliminado exitosamente
-[2024-03-29 18:03:08] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:03:08] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:03:10] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:03:16] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:03:16] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:03:17] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:03:19] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 5
-[2024-03-29 18:03:23] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 5
-[2024-03-29 18:03:23] [ INFO ] [OdontologoService:64] Actualizando el Odontólogo con id: 5
-[2024-03-29 18:03:23] [ INFO ] [OdontologoService:73] Actualizado exitosamente
-[2024-03-29 18:03:23] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:03:36] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:03:36] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:12:34] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:12:39] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:12:39] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:12:42] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:12:47] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:12:47] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:12:48] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:13:01] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:13:01] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:14:30] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:14:34] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:14:34] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:14:35] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:14:42] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:14:42] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:14:43] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:14:50] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:14:50] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:14:51] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:14:51] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:14:52] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:14:52] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:21:04] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:21:39] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:21:39] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:23:19] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:23:19] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:26:25] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:26:30] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:26:30] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:26:31] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:26:35] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:26:35] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:26:36] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:26:43] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:26:43] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:26:44] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:26:44] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:26:44] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:26:44] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:26:45] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:26:45] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:26:45] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:26:45] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:26:45] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:26:45] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:26:45] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:26:45] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:27:35] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:27:39] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:27:39] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:27:40] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:27:45] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:27:45] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:27:46] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:27:51] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:27:51] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:28:13] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:34:57] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:35:02] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:35:02] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:35:04] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:35:08] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:35:08] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:35:09] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:35:14] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:35:14] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:38:39] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:38:44] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:38:44] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:38:45] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:38:50] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:38:50] [ ERROR] [OdontologoService:38] Un Odontólogo con la misma Matrícula ya se encontraba en la base de datos
-[2024-03-29 18:38:53] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:38:55] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:38:56] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:40:40] [ INFO ] [TurnoService:94] Buscando lista de turnos
-[2024-03-29 18:40:40] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:40:40] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 18:40:43] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
-[2024-03-29 18:40:44] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:40:48] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:40:48] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:40:49] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:41:03] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
-[2024-03-29 18:41:03] [ INFO ] [OdontologoService:35] Guardado exitosamente
-[2024-03-29 18:41:05] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:41:07] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
-[2024-03-29 18:41:07] [ INFO ] [TurnoService:94] Buscando lista de turnos
-[2024-03-29 18:41:07] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:36:10] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-29 19:36:15] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
+[2024-03-29 19:36:15] [ INFO ] [OdontologoService:35] Guardado exitosamente
+[2024-03-29 19:36:19] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-29 19:36:25] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
+[2024-03-29 19:36:25] [ INFO ] [OdontologoService:35] Guardado exitosamente
+[2024-03-29 19:36:28] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-29 19:40:01] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
+[2024-03-29 19:40:01] [ INFO ] [OdontologoService:35] Guardado exitosamente
+[2024-03-29 19:41:26] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-29 19:41:31] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
+[2024-03-29 19:41:31] [ INFO ] [OdontologoService:35] Guardado exitosamente
+[2024-03-29 19:41:32] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-29 19:41:40] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
+[2024-03-29 19:41:40] [ INFO ] [OdontologoService:35] Guardado exitosamente
+[2024-03-29 19:41:40] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-29 19:41:45] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-29 19:41:45] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:41:45] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-29 19:41:58] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:42:05] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:42:07] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:42:08] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:42:39] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:45:20] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:48:00] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:48:13] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-29 19:48:13] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-29 19:48:13] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:48:14] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:48:22] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:48:24] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:48:25] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 19:53:28] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 19:53:28] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 19:53:39] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 19:53:39] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 19:53:48] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:00:31] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:00:31] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:00:40] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:00:42] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:00:42] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:00:43] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:00:43] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:00:43] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:01:05] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:01:14] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:01:16] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:01:16] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:01:42] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:01:42] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 20:01:46] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:01:59] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:02:04] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:02:04] [ INFO ] [PacienteService:65] actualizando el paciente con id: 1
+[2024-03-29 20:02:04] [ ERROR] [PacienteService:78] Ya existe un paciente con este dni en la base de datos
+[2024-03-29 20:02:05] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:02:05] [ INFO ] [PacienteService:65] actualizando el paciente con id: 1
+[2024-03-29 20:02:05] [ ERROR] [PacienteService:78] Ya existe un paciente con este dni en la base de datos
+[2024-03-29 20:02:06] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:02:06] [ INFO ] [PacienteService:65] actualizando el paciente con id: 1
+[2024-03-29 20:02:06] [ ERROR] [PacienteService:78] Ya existe un paciente con este dni en la base de datos
+[2024-03-29 20:07:10] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:07:11] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:07:12] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:07:12] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-29 20:07:12] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-29 20:07:12] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-29 20:07:13] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:07:14] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-29 20:07:15] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:10:44] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:10:46] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:12:48] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:13:38] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:14:04] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:14:04] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 20:14:06] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:14:06] [ ERROR] [PacienteService:39] Un paciente con el mismo Dni ya se encontraba en la base de datos
+[2024-03-29 20:17:04] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:17:04] [ ERROR] [PacienteService:39] Un paciente con el mismo Dni ya se encontraba en la base de datos
+[2024-03-29 20:17:09] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:17:09] [ ERROR] [PacienteService:39] Un paciente con el mismo Dni ya se encontraba en la base de datos
+[2024-03-29 20:17:53] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:17:53] [ ERROR] [PacienteService:39] Un paciente con el mismo Dni ya se encontraba en la base de datos
+[2024-03-29 20:18:02] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:18:02] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 20:18:17] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:18:22] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:18:25] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:18:25] [ INFO ] [PacienteService:85] Eliminando al paciente con id: 1
+[2024-03-29 20:18:25] [ INFO ] [PacienteService:88] Paciente eliminado exitosamente
+[2024-03-29 20:18:28] [ INFO ] [PacienteService:53] Buscando el paciente con id: 2
+[2024-03-29 20:18:31] [ INFO ] [PacienteService:53] Buscando el paciente con id: 2
+[2024-03-29 20:18:31] [ INFO ] [PacienteService:65] actualizando el paciente con id: 2
+[2024-03-29 20:18:31] [ ERROR] [PacienteService:78] Ya existe un paciente con este dni en la base de datos
+[2024-03-29 20:18:49] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:18:49] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 20:18:50] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:19:08] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:19:08] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 20:19:09] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:20:06] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:20:13] [ INFO ] [PacienteService:53] Buscando el paciente con id: 3
+[2024-03-29 20:20:13] [ INFO ] [PacienteService:85] Eliminando al paciente con id: 3
+[2024-03-29 20:20:13] [ INFO ] [PacienteService:88] Paciente eliminado exitosamente
+[2024-03-29 20:20:20] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:20:37] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:20:37] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 20:22:11] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:22:21] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:22:21] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 20:22:24] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:22:33] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:22:33] [ INFO ] [PacienteService:85] Eliminando al paciente con id: 1
+[2024-03-29 20:22:33] [ INFO ] [PacienteService:88] Paciente eliminado exitosamente
+[2024-03-29 20:22:43] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:22:43] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 20:22:47] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:27:20] [ INFO ] [PacienteService:53] Buscando el paciente con id: 2
+[2024-03-29 20:27:20] [ INFO ] [PacienteService:65] actualizando el paciente con id: 2
+[2024-03-29 20:27:20] [ INFO ] [PacienteService:74] Actualizado exitosamente
+[2024-03-29 20:30:01] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-29 20:30:05] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:30:23] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:30:23] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 20:30:24] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:30:31] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:30:48] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:30:52] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:31:15] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:31:40] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:31:40] [ INFO ] [PacienteService:65] actualizando el paciente con id: 1
+[2024-03-29 20:31:40] [ ERROR] [PacienteService:78] Ya existe un paciente con este dni en la base de datos
+[2024-03-29 20:43:01] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:43:12] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:43:12] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 20:43:14] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:43:17] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:43:21] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:43:23] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:44:14] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:44:23] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:44:26] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:44:30] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:44:43] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:45:17] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:45:17] [ INFO ] [PacienteService:65] actualizando el paciente con id: 1
+[2024-03-29 20:45:17] [ INFO ] [PacienteService:74] Actualizado exitosamente
+[2024-03-29 20:45:27] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:46:37] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:47:38] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:47:38] [ INFO ] [PacienteService:65] actualizando el paciente con id: 1
+[2024-03-29 20:47:38] [ INFO ] [PacienteService:74] Actualizado exitosamente
+[2024-03-29 20:48:37] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:48:54] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:49:26] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:49:26] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 20:49:28] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:49:34] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:50:14] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:51:01] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:51:01] [ INFO ] [PacienteService:65] actualizando el paciente con id: 1
+[2024-03-29 20:51:01] [ INFO ] [PacienteService:74] Actualizado exitosamente
+[2024-03-29 20:57:13] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:57:15] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:57:15] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:57:17] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:57:29] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 20:57:29] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 20:57:29] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 20:57:32] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:57:40] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 20:57:40] [ INFO ] [PacienteService:65] actualizando el paciente con id: 1
+[2024-03-29 20:57:40] [ INFO ] [PacienteService:74] Actualizado exitosamente
+[2024-03-29 20:57:45] [ INFO ] [PacienteService:47] Buscando la lista de pacientes

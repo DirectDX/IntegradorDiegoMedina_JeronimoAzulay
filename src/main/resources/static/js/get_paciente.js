@@ -1,4 +1,15 @@
 window.addEventListener('load', function () {
+    // Obtener todos los elementos con la clase "close"
+  const closeButtonElements = document.querySelectorAll(".cerrarActualizar");
+
+    // Agregar un event listener a cada elemento
+    closeButtonElements.forEach((element) => {
+        element.addEventListener("click", function () {
+          // Recargar la página
+          console.log("click en close");
+          window.location.reload();
+        });
+      });
 
     // Function to get the list of patients from the server
     function getPatients() {

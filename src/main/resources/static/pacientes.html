@@ -63,7 +63,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Agregar Paciente</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="close cerrarActualizar" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -93,7 +93,7 @@
                                     </div>
                                     <div class="form-group">
                                       <label class="control-label" for="add_numero">Número:</label>
-                                      <input type="text" class="form-control" id="add_numero" placeholder="Ingrese el número" name="numero" ></input>
+                                      <input type="number" class="form-control" id="add_numero" placeholder="Ingrese el número" name="numero" ></input>
                                     </div>
                                     <div class="form-group">
                                       <label class="control-label" for="add_localidad">Localidad:</label>
@@ -105,9 +105,9 @@
                                     </div>
                                     <button type="submit" class="btn btn-danger"
                                         id="btn-add-new-patient">Guardar</button>
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-secondary cerrarActualizar" data-dismiss="modal">Cerrar</button>
                                   </form>
-                                  <div id="response" style="display:none; margin-top:10px"></div>
+                                  <div id="add_response" style="display:none; margin-top:10px"></div>
                                 </div>
                               </div>
                             </div>
@@ -121,7 +121,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="putModalLabel">Actualizar Paciente</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <button type="button" class="close cerrarActualizar" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
@@ -153,7 +153,7 @@
                                           </div>
                                           <div class="form-group">
                                             <label class="control-label" for="put_numero">Número:</label>
-                                            <input type="text" class="form-control" id="put_numero" placeholder="Ingrese el número" name="numero" ></input>
+                                            <input type="number" class="form-control" id="put_numero" placeholder="Ingrese el número" name="numero" ></input>
                                           </div>
                                           <div class="form-group">
                                             <label class="control-label" for="put_localidad">Localidad:</label>
@@ -165,9 +165,10 @@
                                           </div>
                                           <button type="submit" class="btn btn-danger"
                                               id="btn-put-patient">Actualizar</button>
-                                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                              <button type="button" class="btn btn-secondary cerrarActualizar" data-dismiss="modal">Cerrar</button>
       
                                     </form>
+                                    <div id="put_response" style="display:none; margin-top:10px"></div>
                                 </div>
                             </div>
                         </div>

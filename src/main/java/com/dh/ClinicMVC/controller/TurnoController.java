@@ -71,7 +71,7 @@ public class TurnoController {
         ResponseEntity<String> response;
         Optional<TurnoResponseDTO> turnoBuscado = turnoService.buscarPorId(id);
         if (turnoBuscado.isPresent()) {
-            pacienteService.eliminar(id);
+            turnoService.eliminar(id);
             response = ResponseEntity.ok("Se eliminó el turno con id " + id);
         } else {
             response = ResponseEntity.notFound().build();

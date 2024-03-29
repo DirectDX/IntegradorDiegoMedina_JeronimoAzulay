@@ -27,11 +27,8 @@ public class PacienteController {
     @GetMapping
     public ResponseEntity<List<Paciente>> listarTodos() {
         List<Paciente> listaPacientes = pacienteService.listarTodos();
-        if (!listaPacientes.isEmpty()) {
             return ResponseEntity.ok(listaPacientes);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+
     }
 
     @GetMapping("/{id}")

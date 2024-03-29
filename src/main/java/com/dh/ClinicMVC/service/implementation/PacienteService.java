@@ -63,9 +63,9 @@ public class PacienteService implements IPacienteService {
     @Override
     public void actualizar(Paciente paciente) throws BadRequest {
         LOGGER.info("actualizando el paciente con id: " + paciente.getId());
-        Optional<Paciente> odontologoBDList = pacienteRepository.findByDni(paciente.getDni());
-        if (odontologoBDList.isEmpty()) {
-            // si el dni no existe, verifica campos vacíos y guardar el odontólogo
+        Optional<Paciente> pacienteOptional = pacienteRepository.findByDni(paciente.getDni());
+        if ((pacienteOptional.isPresent() && paciente.getId().equals(pacienteOptional.get().getId())) || pacienteOptional.isEmpty()) {
+            // si el dni no existe, verifica campos vacíos y guardar el paciente
             if (paciente.getNombre() == null || paciente.getApellido() == null || paciente.getDni() == null
                     || paciente.getNombre().trim().isEmpty() || paciente.getApellido().trim().isEmpty() || paciente.getDni().trim().isEmpty()) {
                 LOGGER.error("Al menos uno de los campos a actualizar esta vacio");

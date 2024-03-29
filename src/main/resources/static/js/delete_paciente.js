@@ -11,16 +11,13 @@
                 if (response.ok) {
                     // If the delete operation was successful, remove the row from the table
                     document.getElementById('tr_' + id).remove();
-                }
-            });
+                } else {
+                    throw new Error('Error al eliminar el paciente');
+                  }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+              });
     }
 
-    // Event listener to handle delete button clicks
-    document.getElementById("patientTable").addEventListener("click", function (event) {
-        if (event.target && event.target.nodeName === "IMG") {
-            const patientId = event.target.closest('tr').querySelector('.td_id').textContent;
-            if (confirm("¿Estás seguro de que quieres eliminar a este paciente?")) {
-                deletePatient(patientId);
-            }
-        }
-    });
+

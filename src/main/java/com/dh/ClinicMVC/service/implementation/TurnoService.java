@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +38,10 @@ public class TurnoService implements ITurnoService {
         LOGGER.info("Persitiendo un Turno");
         //convertir el String del turnoRequestDTO a LocalDate
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        DateTimeFormatter formatterTime = DateTimeFormatter.ofPattern("HH:mm");
         //creamos el LocalDate que vamos a tener que persistir en la BD
         LocalDate date = LocalDate.parse(turnoRequestDTO.getFecha(), formatter);
+        LocalTime time = LocalTime.parse(turnoRequestDTO.getHora(),formatterTime);
 
         // chequeamos que el turno no tenga el mismo odontologo en la misma fecha y hora que un turno ya guardado
         Optional<List<TurnoResponseDTO>> turnosChequeoOdontologo = findByOdontologoId(turnoRequestDTO.getOdontologo_id());
@@ -47,7 +50,8 @@ public class TurnoService implements ITurnoService {
 
             for (TurnoResponseDTO turnoExistente : turnosOdontologo) {
                 LocalDate fechaTurnoExistente = LocalDate.parse(turnoExistente.getFecha(), formatter);
-                if (fechaTurnoExistente.equals(date)) {
+                LocalTime horaTurnoExistente = LocalTime.parse(turnoExistente.getHora(), formatterTime);
+                if (fechaTurnoExistente.equals(date) && horaTurnoExistente.equals(time)) {
                     LOGGER.error("Este odontologo ya tiene un turno asignado en esta fecha y hora");
                     throw new BadRequest("Este odontologo ya tiene un turno asignado en esta fecha y hora");
                 }
@@ -72,6 +76,7 @@ public class TurnoService implements ITurnoService {
 
         //seteamos al turno la fecha
         turnoEntity.setFecha(date);
+        turnoEntity.setHora(time);
 
         //persistir el turno en la BD
         turnoRepository.save(turnoEntity);
@@ -82,6 +87,7 @@ public class TurnoService implements ITurnoService {
         //mapear la entidad persistida en un dto
         TurnoResponseDTO turnoResponseDTO = new TurnoResponseDTO(); //TurnoDto(null, null, null, null)
         turnoResponseDTO.setId(turnoEntity.getId());
+        turnoResponseDTO.setHora(turnoEntity.getHora().toString());
         turnoResponseDTO.setOdontologo_id(turnoEntity.getOdontologo().getId());
         turnoResponseDTO.setPaciente_id(turnoEntity.getPaciente().getId());
         turnoResponseDTO.setFecha(turnoEntity.getFecha().toString());
@@ -101,6 +107,7 @@ public class TurnoService implements ITurnoService {
             TurnoResponseDTO turnoResponseDTO = new TurnoResponseDTO();
             turnoResponseDTO.setId(turno.getId());
             turnoResponseDTO.setFecha(turno.getFecha().toString());
+            turnoResponseDTO.setHora(turno.getHora().toString());
             turnoResponseDTO.setPaciente_id(turno.getPaciente().getId());
             turnoResponseDTO.setOdontologo_id(turno.getOdontologo().getId());
             turnoResponseDTOList.add(turnoResponseDTO);
@@ -119,6 +126,7 @@ public class TurnoService implements ITurnoService {
             Turno turno = turnoOptional.get();
             turnoResponseDTO.setId(turno.getId());
             turnoResponseDTO.setFecha(turno.getFecha().toString());
+            turnoResponseDTO.setHora(turno.getHora().toString());
             turnoResponseDTO.setPaciente_id(turno.getPaciente().getId());
             turnoResponseDTO.setOdontologo_id(turno.getOdontologo().getId());
             return Optional.of(turnoResponseDTO);
@@ -160,6 +168,7 @@ public class TurnoService implements ITurnoService {
                 TurnoResponseDTO turnoResponseDTO = new TurnoResponseDTO();
                 turnoResponseDTO.setId(turno.getId());
                 turnoResponseDTO.setFecha(turno.getFecha().toString());
+                turnoResponseDTO.setHora(turno.getHora().toString());
                 turnoResponseDTO.setPaciente_id(turno.getPaciente().getId());
                 turnoResponseDTO.setOdontologo_id(turno.getOdontologo().getId());
                 turnoResponseDTOList.add(turnoResponseDTO);
@@ -179,6 +188,7 @@ public class TurnoService implements ITurnoService {
                 TurnoResponseDTO turnoResponseDTO = new TurnoResponseDTO();
                 turnoResponseDTO.setId(turno.getId());
                 turnoResponseDTO.setFecha(turno.getFecha().toString());
+                turnoResponseDTO.setHora(turno.getHora().toString());
                 turnoResponseDTO.setPaciente_id(turno.getPaciente().getId());
                 turnoResponseDTO.setOdontologo_id(turno.getOdontologo().getId());
                 turnoResponseDTOList.add(turnoResponseDTO);
