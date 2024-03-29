@@ -13,5 +13,6 @@ public class TurnoResponseDTO {
     private Long id;
     private Long odontologo_id;
     private Long paciente_id;
+    private String hora;
     private String fecha;
 }
