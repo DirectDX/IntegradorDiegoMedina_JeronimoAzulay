@@ -1,24 +1,22 @@
 package com.dh.ClinicMVC.service;
 
-import com.dh.ClinicMVC.dto.TurnoDTO;
 import com.dh.ClinicMVC.dto.request.TurnoRequestDTO;
 import com.dh.ClinicMVC.dto.response.TurnoResponseDTO;
-import com.dh.ClinicMVC.entity.Odontologo;
-import com.dh.ClinicMVC.entity.Paciente;
 import com.dh.ClinicMVC.entity.Turno;
+import com.dh.ClinicMVC.exception.ResourceNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface ITurnoService {
     TurnoResponseDTO guardar(TurnoRequestDTO turno) throws Exception;
-    List<Turno> listarTodos();
+    List<TurnoResponseDTO> listarTodos();
 
-    Turno buscarPorId(Long id);
+    Optional<TurnoResponseDTO> buscarPorId(Long id);
 
     void eliminar(Long id);
 
     void actualizar(Turno turno);
-    Optional<List<Turno>> findByOdontologoId(Long id);
-    Optional<List<Turno>> findByPacienteId(Long id);
+    Optional<List<TurnoResponseDTO>> findByOdontologoId(Long id);
+    Optional<List<TurnoResponseDTO>> findByPacienteId(Long id);
 }

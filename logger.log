@@ -37,3 +37,37 @@
 [2024-03-24 15:47:55] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@120b6727
 [2024-03-24 15:48:07] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@23fc1cd
 [2024-03-24 15:48:59] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@3701a87c
+[2024-03-27 21:05:22] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@5d1802dd
+[2024-03-27 21:05:33] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@72ddb0cc
+[2024-03-27 21:06:19] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@1c5e798a
+[2024-03-27 21:12:23] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@6ee93dcb
+[2024-03-27 21:14:37] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@4f1f7a8b
+[2024-03-27 21:14:46] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@6d763903
+[2024-03-27 21:24:01] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@4d7f8400
+[2024-03-27 21:54:29] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@199fe0e2
+[2024-03-27 21:54:30] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@7796b633
+[2024-03-27 21:55:23] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@78e980b0
+[2024-03-27 21:56:28] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@3e2e0545
+[2024-03-27 21:58:50] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@134d322a
+[2024-03-27 21:59:19] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@1bd1a0cc
+[2024-03-27 21:59:27] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@70432b80
+[2024-03-27 22:39:53] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@6221a45e
+[2024-03-27 22:45:22] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@f3d23b1
+[2024-03-27 22:56:38] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@38565f06
+[2024-03-27 22:56:43] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@52defd84
+[2024-03-28 18:42:48] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@6db00cad
+[2024-03-28 18:42:48] [ INFO ] [TurnoService:37] Persitiendo un Turno
+[2024-03-28 18:42:48] [ INFO ] [TurnoService:155] Buscando los turnos con Odontologo id: 1
+[2024-03-28 18:43:09] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@72f97da5
+[2024-03-28 18:43:09] [ INFO ] [TurnoService:37] Persitiendo un Turno
+[2024-03-28 18:43:09] [ INFO ] [TurnoService:155] Buscando los turnos con Odontologo id: 1
+[2024-03-29 13:10:52] [ INFO ] [OdontologoServiceTest:47] []
+[2024-03-29 13:11:10] [ INFO ] [OdontologoServiceTest:47] 0
+[2024-03-29 13:12:14] [ INFO ] [OdontologoServiceTest:47] 0
+[2024-03-29 14:31:05] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 14:31:14] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 14:31:14] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 14:31:17] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 14:31:36] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 14:31:36] [ INFO ] [PacienteService:85] Eliminando al paciente con id: 1
+[2024-03-29 14:31:36] [ INFO ] [PacienteService:88] Paciente eliminado exitosamente
