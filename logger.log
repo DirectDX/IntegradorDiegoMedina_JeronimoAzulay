@@ -61,3 +61,13 @@
 [2024-03-28 18:43:09] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@72f97da5
 [2024-03-28 18:43:09] [ INFO ] [TurnoService:37] Persitiendo un Turno
 [2024-03-28 18:43:09] [ INFO ] [TurnoService:155] Buscando los turnos con Odontologo id: 1
+[2024-03-29 13:10:52] [ INFO ] [OdontologoServiceTest:47] []
+[2024-03-29 13:11:10] [ INFO ] [OdontologoServiceTest:47] 0
+[2024-03-29 13:12:14] [ INFO ] [OdontologoServiceTest:47] 0
+[2024-03-29 14:31:05] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 14:31:14] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-29 14:31:14] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-29 14:31:17] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-29 14:31:36] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-29 14:31:36] [ INFO ] [PacienteService:85] Eliminando al paciente con id: 1
+[2024-03-29 14:31:36] [ INFO ] [PacienteService:88] Paciente eliminado exitosamente

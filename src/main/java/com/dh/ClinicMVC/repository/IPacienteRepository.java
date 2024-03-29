@@ -12,5 +12,5 @@ import java.util.Optional;
 @Repository
 public interface IPacienteRepository extends JpaRepository<Paciente, Long> {
     @Query("Select o FROM Paciente o WHERE o.dni = ?1")
-    Optional<Odontologo> findByDni(String nombre);
+    Optional<Paciente> findByDni(String nombre);
 }
