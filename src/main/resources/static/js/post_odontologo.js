@@ -45,11 +45,20 @@ window.addEventListener('load', function () {
             resetUploadForm();
         })
         .catch(error => {
-            // Manejar errores generados por fetch o por la lógica anterior
-            let errorAlert = '<div class="alert alert-danger alert-dismissible">' +
-                             '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                             `<strong>Error:</strong> ${error.message}</div>`;
-    
+            let errorAlert;
+            if (error.response && error.response.status === 400) {
+                console.log(error.response)
+                errorAlert = `<div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Error:</strong> ${error.response.data.message}
+                              </div>`;
+            } else {
+                console.log(error.response)
+                errorAlert = `<div class="alert alert-danger alert-dismissible">
+                                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                <strong>Error:</strong> ${error.message}</div>`;
+            }
+        
             document.querySelector('#add_response').innerHTML = errorAlert;
             document.querySelector('#add_response').style.display = "block";
             resetUploadForm();
