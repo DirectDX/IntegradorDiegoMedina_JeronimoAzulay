@@ -3,6 +3,7 @@ package com.dh.ClinicMVC.controller;
 import com.dh.ClinicMVC.dto.TurnoDTO;
 import com.dh.ClinicMVC.dto.request.TurnoRequestDTO;
 import com.dh.ClinicMVC.dto.response.TurnoResponseDTO;
+import com.dh.ClinicMVC.dto.response.TurnoResponseDTOTable;
 import com.dh.ClinicMVC.entity.Paciente;
 import com.dh.ClinicMVC.entity.Turno;
 import com.dh.ClinicMVC.service.IOdontologoService;
@@ -87,6 +88,17 @@ public class TurnoController {
             return ResponseEntity.notFound().build();
         }
     }
+
+    @GetMapping("/table")
+    public ResponseEntity<List<TurnoResponseDTOTable>> listarTodosTable() {
+        List<TurnoResponseDTOTable> listaTurnos = turnoService.listarTodosTable();
+        if (!listaTurnos.isEmpty()) {
+            return ResponseEntity.ok(listaTurnos);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
     @GetMapping("/paciente/{id}")
     public ResponseEntity<List<TurnoResponseDTO>> buscarPorPacienteId(@RequestParam Long id) {
         Optional<List<TurnoResponseDTO>> optionalTurnoResponseDTOList = turnoService.findByPacienteId(id);
