@@ -175,3 +175,135 @@
 [2024-03-29 20:57:40] [ INFO ] [PacienteService:65] actualizando el paciente con id: 1
 [2024-03-29 20:57:40] [ INFO ] [PacienteService:74] Actualizado exitosamente
 [2024-03-29 20:57:45] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:01:05] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:01:08] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:01:08] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:01:08] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:01:17] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:01:23] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
+[2024-03-30 09:01:23] [ INFO ] [OdontologoService:35] Guardado exitosamente
+[2024-03-30 09:01:24] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:01:38] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
+[2024-03-30 09:01:38] [ INFO ] [OdontologoService:35] Guardado exitosamente
+[2024-03-30 09:01:39] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:01:41] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:02:15] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-30 09:02:15] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-30 09:02:17] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:02:30] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:02:30] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:02:30] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:02:46] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@7955fac5
+[2024-03-30 09:02:46] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 1
+[2024-03-30 09:02:46] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-30 09:02:46] [ INFO ] [TurnoService:38] Persitiendo un Turno
+[2024-03-30 09:02:46] [ INFO ] [TurnoService:163] Buscando los turnos con Odontologo id: 1
+[2024-03-30 09:02:46] [ INFO ] [TurnoService:84] Turno Persistido
+[2024-03-30 09:03:18] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:03:18] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:03:18] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:03:23] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:03:23] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:03:23] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:03:26] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:03:26] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:03:26] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:03:37] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@390c8869
+[2024-03-30 09:03:37] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 1
+[2024-03-30 09:03:37] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-30 09:03:37] [ INFO ] [TurnoService:38] Persitiendo un Turno
+[2024-03-30 09:03:37] [ INFO ] [TurnoService:163] Buscando los turnos con Odontologo id: 1
+[2024-03-30 09:03:37] [ INFO ] [TurnoService:84] Turno Persistido
+[2024-03-30 09:04:33] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:04:38] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
+[2024-03-30 09:04:39] [ INFO ] [OdontologoService:35] Guardado exitosamente
+[2024-03-30 09:04:39] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:04:44] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:04:56] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-30 09:04:56] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-30 09:04:59] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:06:16] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-30 09:06:21] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-30 09:06:21] [ INFO ] [PacienteService:65] actualizando el paciente con id: 1
+[2024-03-30 09:06:21] [ INFO ] [PacienteService:74] Actualizado exitosamente
+[2024-03-30 09:06:24] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:06:30] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-30 09:06:45] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-30 09:06:45] [ INFO ] [PacienteService:65] actualizando el paciente con id: 1
+[2024-03-30 09:06:45] [ INFO ] [PacienteService:74] Actualizado exitosamente
+[2024-03-30 09:06:46] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:06:53] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-30 09:07:03] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-30 09:07:10] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:07:10] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:10:01] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:10:01] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:10:01] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:10:12] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@72305639
+[2024-03-30 09:10:12] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 1
+[2024-03-30 09:10:12] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-30 09:10:12] [ INFO ] [TurnoService:38] Persitiendo un Turno
+[2024-03-30 09:10:12] [ INFO ] [TurnoService:163] Buscando los turnos con Odontologo id: 1
+[2024-03-30 09:10:12] [ INFO ] [TurnoService:84] Turno Persistido
+[2024-03-30 09:10:13] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:10:13] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:10:13] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:10:18] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:10:18] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:10:18] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:20:31] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:20:31] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:20:31] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:20:34] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:20:39] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
+[2024-03-30 09:20:39] [ INFO ] [OdontologoService:35] Guardado exitosamente
+[2024-03-30 09:20:40] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:20:41] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:21:01] [ INFO ] [PacienteService:28] Persistiendo un Paciente
+[2024-03-30 09:21:01] [ INFO ] [PacienteService:36] Guardado exitosamente
+[2024-03-30 09:21:03] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:27:22] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:27:22] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:27:22] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:27:32] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@99abe43
+[2024-03-30 09:27:32] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 1
+[2024-03-30 09:27:32] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-30 09:27:32] [ INFO ] [TurnoService:38] Persitiendo un Turno
+[2024-03-30 09:27:32] [ INFO ] [TurnoService:163] Buscando los turnos con Odontologo id: 1
+[2024-03-30 09:27:32] [ INFO ] [TurnoService:84] Turno Persistido
+[2024-03-30 09:27:33] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:27:33] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:27:33] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:27:35] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:27:35] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:27:35] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:27:36] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:27:36] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:27:36] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:31:31] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:31:31] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:31:31] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:35:36] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:56:54] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:57:14] [ INFO ] [OdontologoService:27] Persistiendo un Odontólogo
+[2024-03-30 09:57:14] [ INFO ] [OdontologoService:35] Guardado exitosamente
+[2024-03-30 09:57:15] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:57:22] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:57:24] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:57:24] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:57:24] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:57:35] [ INFO ] [TurnoController:45] esto trae el turnoRequestDTO: com.dh.ClinicMVC.dto.request.TurnoRequestDTO@48e5e876
+[2024-03-30 09:57:35] [ INFO ] [OdontologoService:52] Buscando el Odontólogo con id: 1
+[2024-03-30 09:57:35] [ INFO ] [PacienteService:53] Buscando el paciente con id: 1
+[2024-03-30 09:57:35] [ INFO ] [TurnoService:38] Persitiendo un Turno
+[2024-03-30 09:57:35] [ INFO ] [TurnoService:163] Buscando los turnos con Odontologo id: 1
+[2024-03-30 09:57:35] [ INFO ] [TurnoService:84] Turno Persistido
+[2024-03-30 09:57:37] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:57:37] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:57:37] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:57:40] [ INFO ] [OdontologoService:46] Buscando la lista de Odontólogos
+[2024-03-30 09:57:40] [ INFO ] [PacienteService:47] Buscando la lista de pacientes
+[2024-03-30 09:57:40] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:57:45] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:58:09] [ INFO ] [TurnoService:100] Buscando lista de turnos
+[2024-03-30 09:58:13] [ INFO ] [TurnoService:100] Buscando lista de turnos

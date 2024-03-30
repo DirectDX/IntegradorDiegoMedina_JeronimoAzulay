@@ -137,7 +137,7 @@ function populatePatientTable(patients) {
                 document.getElementById('put_dni').value = data.dni;
                 document.getElementById('put_fechaIngreso').value = data.fechaIngreso;
                 document.getElementById('put_calle').value = data.calle;
-                document.getElementById('put_numero').value = data.numero;
+                document.getElementById('put_numero').value = parseInt(data.numero);
                 document.getElementById('put_localidad').value = data.localidad;
                 document.getElementById('put_provincia').value = data.provincia;
                 // Show the update modal

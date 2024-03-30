@@ -89,55 +89,12 @@
         </div>
   </div>
 
-  <!-- Modal Turno add -->
-  <div class="modal fade" id="agregarTurnoModal" tabindex="-1" aria-labelledby="agregarTurnoModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Agregar Turno</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <div class="col-md-12">
-                      <form id="formAgregarTurno">
-                        <div class="form-group">
-                          <label for="odontologo_selector">Odontólogo:</label>
-                          <select class="form-control" id="odontologo_selector" required>
-                            <option value="" selected disabled>Seleccionar odontólogo</option>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label for="paciente_selector">Paciente:</label>
-                          <select class="form-control" id="paciente_selector" required>
-                            <option value="" selected disabled>Seleccionar paciente</option>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label for="fechaHora">Fecha y Hora:</label>
-                          <input type="datetime-local" class="form-control" id="fechaHora" required>
-                        </div>
-                
-                
-                        <button type="submit" class="btn btn-danger"
-                                id="btn-add-new-dentist">Guardar</button>
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                      </form>
-                      <div id="add_response" style="display:none; margin-top:10px">
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <div class="container-fluid">
-    <div id="div_patient_table">
+    <div id="div_turn_table">
       <div class="row col-md-12 table-responsive">
-          <table id="patientTable" class="table table-striped">
+          <table id="turnTable" class="table table-striped">
               <thead>
               <tr>
                 <th colspan="3" style="text-align: center; background-color: azure; color: #188291;">Turno</th>
@@ -160,7 +117,7 @@
 
               </tr>
               </thead>
-              <tbody id="patientTableBody">
+              <tbody id="turnTableBody">
 
               </tbody>
           </table>

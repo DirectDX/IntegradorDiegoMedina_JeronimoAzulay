@@ -1,70 +1,89 @@
-window.addEventListener('DOMContentLoaded', function () {
-    const patientTableBody = document.getElementById('patientTableBody');
+window.addEventListener("DOMContentLoaded", function () {
+  const patientTableBody = document.getElementById("turnTableBody");
 
-    fetch('/turnos')
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(turno => {
-                // Create row for the turno
-                const row = document.createElement('tr');
+  function getTurns() {
+    fetch("/turnos")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error al obtener la lista de turnos");
+        }
+        return response.json();
+      })
+      .then((turns) => {
+        // Once we get the list of patients, populate the table
+        populateTurnTable(turns);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  }
 
-                // Turno data
-                const turnoIdCell = document.createElement('td');
-                turnoIdCell.textContent = turno.id;
-                row.appendChild(turnoIdCell);
+  function populateTurnTable(turns) {
+    const tableBody = document.getElementById("turnTableBody");
+    tableBody.innerHTML = "";
 
-                const fechaCell = document.createElement('td');
-                fechaCell.textContent = turno.fecha;
-                row.appendChild(fechaCell);
+    turns.forEach((turno) => {
+      // Create row for the turno
+      const row = document.createElement("tr");
 
-                const horaCell = document.createElement('td');
-                horaCell.textContent = turno.hora;
-                row.appendChild(horaCell);
+      // Turno data
+      const turnoIdCell = document.createElement("td");
+      turnoIdCell.textContent = turno.id;
+      row.appendChild(turnoIdCell);
 
-                // Odontologo data
-                const odontologoNombreCell = document.createElement('td');
-                odontologoNombreCell.textContent = turno.odontologo.nombre;
-                row.appendChild(odontologoNombreCell);
+      const fechaCell = document.createElement("td");
+      fechaCell.textContent = turno.fecha;
+      row.appendChild(fechaCell);
 
-                const odontologoApellidoCell = document.createElement('td');
-                odontologoApellidoCell.textContent = turno.odontologo.apellido;
-                row.appendChild(odontologoApellidoCell);
+      const horaCell = document.createElement("td");
+      horaCell.textContent = turno.hora;
+      row.appendChild(horaCell);
 
-                const matriculaCell = document.createElement('td');
-                matriculaCell.textContent = turno.odontologo.matricula;
-                row.appendChild(matriculaCell);
+      // Odontologo data
+      const odontologoNombreCell = document.createElement("td");
+      odontologoNombreCell.textContent = turno.odontologo.nombre;
+      row.appendChild(odontologoNombreCell);
 
-                // Paciente data
-                const pacienteNombreCell = document.createElement('td');
-                pacienteNombreCell.textContent = turno.paciente.nombre;
-                row.appendChild(pacienteNombreCell);
+      const odontologoApellidoCell = document.createElement("td");
+      odontologoApellidoCell.textContent = turno.odontologo.apellido;
+      row.appendChild(odontologoApellidoCell);
 
-                const pacienteApellidoCell = document.createElement('td');
-                pacienteApellidoCell.textContent = turno.paciente.apellido;
-                row.appendChild(pacienteApellidoCell);
+      const matriculaCell = document.createElement("td");
+      matriculaCell.textContent = turno.odontologo.matricula;
+      row.appendChild(matriculaCell);
 
-                const dniCell = document.createElement('td');
-                dniCell.textContent = turno.paciente.dni;
-                row.appendChild(dniCell);
+      // Paciente data
+      const pacienteNombreCell = document.createElement("td");
+      pacienteNombreCell.textContent = turno.paciente.nombre;
+      row.appendChild(pacienteNombreCell);
 
-                // Create cell for "Eliminar" button
-                const deleteCell = document.createElement('td');
-                const deleteButton = document.createElement('button');
-                deleteButton.type = 'button';
-                deleteButton.className = 'btn btn-danger delete-btn';
-                deleteButton.textContent = 'Eliminar';
-                deleteButton.addEventListener('click', function () {
-                    const turnoId = this.closest('tr').querySelector('td:first-child').textContent;
-                    if (confirm("¿Estás seguro de que quieres eliminar el turno?")) {
-                        deleteTurno(parseInt(turnoId));
-                    }
-                });
-                deleteCell.appendChild(deleteButton);
-                row.appendChild(deleteCell);
+      const pacienteApellidoCell = document.createElement("td");
+      pacienteApellidoCell.textContent = turno.paciente.apellido;
+      row.appendChild(pacienteApellidoCell);
 
-                // Append the row to the table body
-                patientTableBody.appendChild(row);
-            });
-        })
-        .catch(error => console.error('Error al obtener la lista de turnos:', error));
+      const dniCell = document.createElement("td");
+      dniCell.textContent = turno.paciente.dni;
+      row.appendChild(dniCell);
+
+      // Create cell for "Eliminar" button
+      const deleteCell = document.createElement("td");
+      const deleteButton = document.createElement("button");
+      deleteButton.type = "button";
+      deleteButton.className = "btn btn-danger delete-btn";
+      deleteButton.textContent = "Eliminar";
+      deleteButton.addEventListener("click", function () {
+        const turnoId =
+          this.closest("tr").querySelector("td:first-child").textContent;
+        if (confirm("¿Estás seguro de que quieres eliminar el turno?")) {
+          deleteTurno(parseInt(turnoId));
+        }
+      });
+      deleteCell.appendChild(deleteButton);
+      row.appendChild(deleteCell);
+
+      // Append the row to the table body
+      patientTableBody.appendChild(row);
+    });
+  }
+  getTurns();
 });

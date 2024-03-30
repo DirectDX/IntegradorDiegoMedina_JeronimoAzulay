@@ -5,7 +5,7 @@ function deleteTurno(turnoId) {
     .then(response => {
         if (response.ok) {
             // Remove the row from the table if deletion is successful
-            const rowToDelete = document.querySelector(`#patientTableBody tr td:first-child`);
+            const rowToDelete = document.querySelector(`#turnTableBody tr[data-turno-id="${turnoId}"]`);
             rowToDelete.closest('tr').remove();
             alert('Turno eliminado correctamente');
         } else {
