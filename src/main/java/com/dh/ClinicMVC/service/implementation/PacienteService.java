@@ -51,28 +51,28 @@ public class PacienteService implements IPacienteService {
     @Override
     public Optional<Paciente> buscarPorId(Long id) throws ResourceNotFoundException {
         LOGGER.info("Buscando el paciente con id: " + id);
-       Optional<Paciente> pacienteOptional = pacienteRepository.findById(id);
-       if (pacienteOptional.isPresent()) {
-           return pacienteOptional;
-       }
-       else  {
-           throw new ResourceNotFoundException("No se encontro al paciente");
-       }
+        Optional<Paciente> pacienteOptional = pacienteRepository.findById(id);
+        if (pacienteOptional.isPresent()) {
+            return pacienteOptional;
+        }
+        else  {
+            throw new ResourceNotFoundException("No se encontro al paciente");
+        }
     }
 
     @Override
     public void actualizar(Paciente paciente) throws BadRequest {
         LOGGER.info("actualizando el paciente con id: " + paciente.getId());
         Optional<Paciente> pacienteOptional = pacienteRepository.findByDni(paciente.getDni());
-        if ((pacienteOptional.isPresent() && paciente.getId().equals(pacienteOptional.get().getId())) || pacienteOptional.isEmpty()) {
-            // si el dni no existe, verifica campos vacíos y guardar el paciente
+        if (pacienteOptional.isPresent() ) {
+            // si el dni no existe, verifica campos vacíos y guardar el odontólogo
             if (paciente.getNombre() == null || paciente.getApellido() == null || paciente.getDni() == null
                     || paciente.getNombre().trim().isEmpty() || paciente.getApellido().trim().isEmpty() || paciente.getDni().trim().isEmpty()) {
                 LOGGER.error("Al menos uno de los campos a actualizar esta vacio");
                 throw new BadRequest("No puedes poner campos vacíos");
             }
             LOGGER.info("Actualizado exitosamente");
-                pacienteRepository.save(paciente);
+            pacienteRepository.save(paciente);
         } else {
             // La matrícula ya existe en la base de datos
             LOGGER.error("Ya existe un paciente con este dni en la base de datos");

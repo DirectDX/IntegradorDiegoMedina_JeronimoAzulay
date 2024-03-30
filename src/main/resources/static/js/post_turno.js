@@ -41,8 +41,8 @@ window.addEventListener('DOMContentLoaded', function () {
             // Si no hay ningún error, mostrar un mensaje de éxito
             alert('Turno agregado correctamente');
             // Opcional: puedes redirigir al usuario a otra página o actualizar la lista de turnos
-            window.location.reload();
-            //opulateTurnTable(data); 
+            window.location.href = '/turnos.html';
+        
         })
         .catch(error => {
             // Si hay algún error, mostrar un mensaje de error

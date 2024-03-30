@@ -1,8 +1,8 @@
-window.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
   const patientTableBody = document.getElementById("turnTableBody");
 
   function getTurns() {
-    fetch("/turnos")
+    fetch("/turnos/table")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Error al obtener la lista de turnos");
@@ -41,28 +41,28 @@ window.addEventListener("DOMContentLoaded", function () {
 
       // Odontologo data
       const odontologoNombreCell = document.createElement("td");
-      odontologoNombreCell.textContent = turno.odontologo.nombre;
+      odontologoNombreCell.textContent = turno.nombreOdontologo;
       row.appendChild(odontologoNombreCell);
 
       const odontologoApellidoCell = document.createElement("td");
-      odontologoApellidoCell.textContent = turno.odontologo.apellido;
+      odontologoApellidoCell.textContent = turno.apellidoOdontologo;
       row.appendChild(odontologoApellidoCell);
 
       const matriculaCell = document.createElement("td");
-      matriculaCell.textContent = turno.odontologo.matricula;
+      matriculaCell.textContent = turno.matriculaOdontologo;
       row.appendChild(matriculaCell);
 
       // Paciente data
       const pacienteNombreCell = document.createElement("td");
-      pacienteNombreCell.textContent = turno.paciente.nombre;
+      pacienteNombreCell.textContent = turno.nombrePaciente;
       row.appendChild(pacienteNombreCell);
 
       const pacienteApellidoCell = document.createElement("td");
-      pacienteApellidoCell.textContent = turno.paciente.apellido;
+      pacienteApellidoCell.textContent = turno.apellidoPaciente;
       row.appendChild(pacienteApellidoCell);
 
       const dniCell = document.createElement("td");
-      dniCell.textContent = turno.paciente.dni;
+      dniCell.textContent = turno.dniPaciente;
       row.appendChild(dniCell);
 
       // Create cell for "Eliminar" button
@@ -75,7 +75,8 @@ window.addEventListener("DOMContentLoaded", function () {
         const turnoId =
           this.closest("tr").querySelector("td:first-child").textContent;
         if (confirm("¿Estás seguro de que quieres eliminar el turno?")) {
-          deleteTurno(parseInt(turnoId));
+            deleteTurno(parseInt(turnoId));
+            window.location.reload()
         }
       });
       deleteCell.appendChild(deleteButton);

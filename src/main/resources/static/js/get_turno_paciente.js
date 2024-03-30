@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('load', function () {
     const pacienteSelect = document.getElementById('paciente_selector');
     
     fetch('/pacientes')

@@ -2,6 +2,7 @@ package com.dh.ClinicMVC.service.implementation;
 
 import com.dh.ClinicMVC.dto.request.TurnoRequestDTO;
 import com.dh.ClinicMVC.dto.response.TurnoResponseDTO;
+import com.dh.ClinicMVC.dto.response.TurnoResponseDTOTable;
 import com.dh.ClinicMVC.entity.Odontologo;
 import com.dh.ClinicMVC.entity.Paciente;
 import com.dh.ClinicMVC.entity.Turno;
@@ -9,6 +10,8 @@ import com.dh.ClinicMVC.entity.Turno;
 import com.dh.ClinicMVC.exception.BadRequest;
 import com.dh.ClinicMVC.exception.ResourceNotFoundException;
 import com.dh.ClinicMVC.repository.ITurnosRepository;
+import com.dh.ClinicMVC.service.IOdontologoService;
+import com.dh.ClinicMVC.service.IPacienteService;
 import com.dh.ClinicMVC.service.ITurnoService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +28,8 @@ import java.util.Optional;
 public class TurnoService implements ITurnoService {
 
     private ITurnosRepository turnoRepository;
+    private IPacienteService pacienteService;
+    private IOdontologoService odontologoService;
     private static final org.apache.log4j.Logger LOGGER = Logger.getLogger(TurnoService.class);
 
     @Autowired
@@ -196,5 +201,46 @@ public class TurnoService implements ITurnoService {
             }
         }
         return Optional.empty();
+    }
+
+    @Override
+    public List<TurnoResponseDTOTable> listarTodosTable() {
+        LOGGER.info("Buscando lista de turnos");
+        // inicializamos las variables odontologo y paciente
+            Odontologo odontologo = null;
+            Paciente paciente = null;
+
+        // creamos la lista donde vamos a guardar los TurnosResponse
+        List<TurnoResponseDTOTable> turnoResponseDTOList = new ArrayList<>();
+
+        //creamos la lista de Turnos y traemos de la base de datos los turnos
+        List<Turno> turnoList = turnoRepository.findAll();
+
+        // mapeamos por cada turnos en la listaTurnos a TurnoResponseDTO
+        for (Turno turno:turnoList) {
+            TurnoResponseDTOTable turnoResponseDTOTable = new TurnoResponseDTOTable();
+            turnoResponseDTOTable.setId(turno.getId());
+            turnoResponseDTOTable.setFecha(turno.getFecha().toString());
+            turnoResponseDTOTable.setHora(turno.getHora().toString());
+            System.out.println(turno.getPaciente().getId());
+
+            // mapeando el paciente dentro del response
+            paciente = turno.getPaciente();
+
+            turnoResponseDTOTable.setPaciente_id(paciente.getId());
+            turnoResponseDTOTable.setNombrePaciente(paciente.getNombre());
+            turnoResponseDTOTable.setApellidoPaciente(paciente.getApellido());
+            turnoResponseDTOTable.setDniPaciente(paciente.getDni());
+
+            // mapeando el odontologo dentro del response
+            odontologo = turno.getOdontologo();
+
+            turnoResponseDTOTable.setOdontologo_id(odontologo.getId());
+            turnoResponseDTOTable.setNombreOdontologo(odontologo.getNombre());
+            turnoResponseDTOTable.setApellidoOdontologo(odontologo.getApellido());
+            turnoResponseDTOTable.setMatriculaOdontologo(odontologo.getMatricula());
+            turnoResponseDTOList.add(turnoResponseDTOTable);
+        }
+        return turnoResponseDTOList;
     }
 }

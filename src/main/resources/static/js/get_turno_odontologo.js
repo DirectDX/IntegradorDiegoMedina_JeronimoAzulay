@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', function () {
+window.addEventListener('load', function () {
     const odontologoSelect = document.getElementById('odontologo_selector');
     
     fetch('/odontologos')

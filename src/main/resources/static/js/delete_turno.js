@@ -1,16 +1,25 @@
 function deleteTurno(turnoId) {
-    fetch(`/turnos/${turnoId}`, {
+    const url = '/turnos/' + turnoId;
+    const settings = {
         method: 'DELETE'
-    })
+    };
+    fetch(url, settings)
     .then(response => {
-        if (response.ok) {
-            // Remove the row from the table if deletion is successful
-            const rowToDelete = document.querySelector(`#turnTableBody tr[data-turno-id="${turnoId}"]`);
-            rowToDelete.closest('tr').remove();
-            alert('Turno eliminado correctamente');
-        } else {
-            alert('Error al eliminar el turno');
-        }
+      if (response.ok) {
+        // If the delete operation was successful, remove the row from the table
+        document.getElementById('tr_' + id).remove();
+        console.log("llegue a la linea")
+        window.location.reload();
+        
+      } else {
+        throw new Error('Error al eliminar el turno');
+      }
     })
-    .catch(error => console.error('Error al eliminar el turno:', error));
+    .catch(error => {
+      console.error('Error:', error);
+    });
 }
+
+
+
+
