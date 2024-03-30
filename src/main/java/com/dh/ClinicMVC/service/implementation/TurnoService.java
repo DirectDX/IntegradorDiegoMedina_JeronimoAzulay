@@ -205,7 +205,7 @@ public class TurnoService implements ITurnoService {
 
     @Override
     public List<TurnoResponseDTOTable> listarTodosTable() {
-        LOGGER.info("Buscando lista de turnos");
+        LOGGER.info("Buscando lista de turnos completa");
         // inicializamos las variables odontologo y paciente
             Odontologo odontologo = null;
             Paciente paciente = null;

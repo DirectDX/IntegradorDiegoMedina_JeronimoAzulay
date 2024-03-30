@@ -64,7 +64,7 @@ public class PacienteService implements IPacienteService {
     public void actualizar(Paciente paciente) throws BadRequest {
         LOGGER.info("actualizando el paciente con id: " + paciente.getId());
         Optional<Paciente> pacienteOptional = pacienteRepository.findByDni(paciente.getDni());
-        if (pacienteOptional.isPresent() ) {
+        if ((pacienteOptional.isPresent() && pacienteOptional.get().getId().equals(paciente.getId())) || pacienteOptional.isEmpty()) {
             // si el dni no existe, verifica campos vacíos y guardar el odontólogo
             if (paciente.getNombre() == null || paciente.getApellido() == null || paciente.getDni() == null
                     || paciente.getNombre().trim().isEmpty() || paciente.getApellido().trim().isEmpty() || paciente.getDni().trim().isEmpty()) {
